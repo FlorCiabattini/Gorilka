@@ -1,0 +1,5575 @@
+/* ============================================================================================================================> RESETEO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    height: -webkit-fill-available;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: -webkit-fill-available;
+    width: 100%;
+    background: #f6e3d3cb;
+    overflow-y: overlay;
+    scroll-behavior: smooth;
+}
+
+/* Barra  de scroll */
+::-webkit-scrollbar {
+    width: 0.2rem;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, #E31E24);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(transparent, #e67e14);
+}
+
+/* =============================================================================================================================> HEADER */
+#header {
+    position: fixed;
+    padding: 0 1.25rem;
+    width: 100%;
+    background: linear-gradient(to right, #E31E24, rgba(230, 126, 20, 0.9));
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+    z-index: 100;
+}
+
+/* Propiedades del header */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    min-height: 3.75rem;
+    max-width: 1920px;
+}
+
+/* Logo del header */
+.header-logo-container .header-logo img {
+    display: flex;
+    height: 1.875rem;
+}
+
+/* Menu del header */
+.nav-menu .nav-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Secciones del menu del header */
+.nav-item .nav-link {
+    margin: 0 0 0 0.375rem;
+    padding: 0.375rem 0.375rem 0.375rem 0.75rem;
+    width: 100px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 0.125rem;
+    border-top-left-radius: 1.25rem;
+    border-bottom-right-radius: 1.25rem;
+}
+
+/* Efecto al pasar el cursor por arriba de las secciones de header */ 
+.nav-link:hover {
+    background: #ffffff;
+    font-weight: 500;
+    color: #000000;
+}
+
+/* Efecto al hacer click sobre cualquier item de las secciones de header */ 
+.nav-link.active {
+    background: #ffffff;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* Icono hamburguesa desactivado */
+.nav-menu .burger {
+    display: none;
+}
+
+/* Diseno del icono hamburguesa */
+.burger-line {
+    margin: 0.25rem 0 0.25rem 0.25rem;
+    height: 0.125rem;
+    width: 1.25rem;
+    background: #ffffff;
+    transition: all 0.3s;
+}
+
+/* ====================================================================================================> 768px (medias query del header) */
+
+@media screen and (max-width: 768px) {
+
+    /* Anulacion del scroll horizontal */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Modifica el alto y el ancho del contenido del header */
+    .nav-bar {
+        min-height: 3.75rem;
+    }
+    
+    /* Modifica el del logo del header */
+    .header-logo-container .header-logo img {
+        height: 1.875rem;
+    }
+    
+    /* Animacion de la entrada del contenedor de secciones */
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 3.75rem;
+        right: 0px;
+        padding-bottom: 50vh;
+        height: 100vh;
+        width: 100%;
+        background: linear-gradient(to right, #E31E24, rgba(230, 126, 20, 0.9));
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    
+    /* Animacion de la entrada de las secciones */
+    .nav-active {
+        transform: translateX(0%);
+    
+    }
+    
+    .nav-item {
+        opacity: 0;
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    /* Boton hamburguesa */
+    .nav-menu .burger {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Animacion del boton hamburguesa al hacer click */
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-4.2px, 4px);
+    }
+    
+    .toggle .line2 {
+        opacity: 0;
+    }
+    
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-4.2px, -4px);
+    }
+        
+}
+
+/* ====================================================================================================? 320px (medias query del header) */
+
+@media screen and (max-width: 320px) {
+
+    /* Logo del header */
+    #header .nav-bar .header-logo-container .header-logo img {
+        height: 1.6rem;
+    }
+
+}
+
+/* ===============================================================================================================================> MAIN */
+#main {
+    background: #ffffff;
+}
+
+/* ========================================================================================================================> MAIN (home) */
+
+/* ============================================================================================================> MAIN (home seccion uno) */
+
+/* Primer contenedor del home */
+.home-first {
+    display: flex;
+    justify-content: center; 
+    padding: 0 1.25rem;
+    margin-top: 3.75rem;
+    height: 28.4rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../image/01-home/01-primera-seccion-02.jpg);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../image/01-home/01-primera-seccion-01.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: left;
+}
+
+/* Contenido dentro del primer contenedor del home */
+.home-first-content {
+    width: 1920px;
+}
+
+/* Contenedor del texton dentro del primer contenedor del home*/
+.home-first-content-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 0.4rem;
+    text-align: left;
+}
+
+/* Tipografia del contenido dentro del primer contenedor del home */
+.home-first-content-text .text h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.2rem;
+    line-height: 4rem;
+    text-transform: uppercase;
+}
+
+/* Imagen dentro del primer contenedor del home */
+.home-first-content-image {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Imagen dentro del primer contenedor del home */
+.home-first-content-image img {
+    margin-top: 1rem;
+    padding: 0 0 1.5rem 1rem;
+    height: 23rem;
+}
+
+/* ============================================================================================================> MAIN (home seccion dos) */
+
+/* Segundo contenedor del home */
+.home-second {
+    display: flex;
+    justify-content: center;
+    padding: 0 1.25rem;
+    height: 28.4rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../image/01-home/02-segunda-seccion-01.jpg);
+    background-size: cover;
+    background-position-y: bottom;
+    background-position-x: center;
+}
+
+/* Contenido dentro del segundo contenedor del home */
+.home-second-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1920px;
+}
+
+/* Imagen dentro del segundo contenedor del home */
+.home-second-content-image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.25rem;
+}
+
+/* Imagen dentro del segundo contenedor del home */
+.home-second-content-image img {
+    height: 22rem;
+}
+
+/* Contenedor del texto y el boton dentro del segundo contenedor del home*/
+.home-second-content-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1.25rem 0 1.25rem 0;
+    text-align: right;
+}
+
+/* Tipografia del contenido dentro del segundo contenedor del home */
+.home-second-content-text .text h3 {
+    padding-right: 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* Boton dentro del segundo contenedor del home */
+.home-second-content-text .button a button {
+    position: relative;
+    padding: 0.3rem;
+    width: 200px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #E31E24, #e67e14);
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+    transition: ease-out 0.3s;
+    z-index: 1;
+}
+
+/* Efecto clickear sobre el boton dentro del segundo contenedor del home */
+.home-second-content-text .button a button:focus {
+    box-shadow: 0 0 0 0.0625rem #000000;
+    animation: anim-shadow 0.3s forwards;
+}
+
+@keyframes anim-shadow {
+    100% {
+        box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+    }
+}
+
+/* Efecto al pasar el mouse sobre el boton dentro del segundo contenedor del home */
+.home-second-content-text .button a button:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.home-second-content-text .button a button:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background: #E31E24;
+    background: linear-gradient(to right, #5e5e5e, #afafaf);
+    border: none;
+    border-radius: 2rem;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.home-second-content-text .button a button:hover:before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+    transition: 0.5s all ease;
+    z-index: -1;
+}
+
+/* ===========================================================================================================> MAIN (home seccion tres) */
+
+/* Tercer contenedor del home */
+.home-third {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; 
+    padding: 0 1.25rem;
+    height: 28.4rem;
+    background: #e4ba8f;
+}
+
+/* Contenido dentro del tercer contenedor del home */
+.home-third-content {
+    width: 1920px;
+}
+
+/* Contenedor del slider en contenido dentro del tercer contenedor del home */
+.home-third .home-third-content .splide {
+    padding: 2.5rem 1.25rem;
+    cursor: grab;
+}
+
+/* Estructura de la tarjeta dentro del slider */
+.home-third .home-third-content .splide .splide__track .splide__list .splide__slide .card-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 22.3rem;
+}
+
+/* Contenedor de la imagen dentro de la tarjeta del slider */
+.home-third .home-third-content .splide .splide__track .splide__list .splide__slide .card-box .image-box {
+    display: flex;
+    justify-content: center;
+}
+
+/* Imagen dentro del contenedor de la imagen dentro de la tarjeta del slider */
+.home-third .home-third-content .splide .splide__track .splide__list .splide__slide .card-box .image-box .card-image {
+    height: 160px;
+    width: 160px;
+}
+
+/* Contenedor de los textos dentro de la tarjeta del slider */
+.home-third .home-third-content .splide .splide__track .splide__list .splide__slide .card-box .info-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Titulo dentro del contenedor de los textos dentro de la tarjeta del slider */
+.home-third .home-third-content .splide .splide__track .splide__list .splide__slide .card-box .info-box .name {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    line-height: 3.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Parrafo dentro del contenedor de los textos dentro de la tarjeta del slider */
+.home-third .home-third-content .splide .splide__track .splide__list .splide__slide .card-box .info-box .description {
+    margin-top: 1rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* =========================================================================================================> MAIN (home seccion cuatro) */
+
+/* Cuarto contenedor del home */
+.home-fourth {
+    display: flex;
+    padding: 0 0 0 1.25rem;
+    height: 28.4rem;
+}
+
+/* Grid area del cuarto contenedor dentro del home */
+.home-fourth-grid-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 28.4rem;
+    width: 100vw;
+}
+
+/* Primer contenedor dentro del grid area del cuarto contenedor del home */
+.home-fourth-container-one {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between; 
+    margin: 0 0 0 auto;
+    padding: 1.25rem 1.25rem 1.25rem 0;
+    height: 28.4rem;
+    max-width: 960px;
+    background: #fefefe;
+}
+
+/* Tipografia del primer contenido dentro del grid area del cuarto contenedor del home */
+.home-fourth-content-text h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    line-height: 4rem;
+    text-transform: uppercase;
+}
+
+/* Boton del primer contenido dentro del grid area del cuarto contenedor del home */
+.home-fourth-content-button a button {
+    position: relative;
+    padding: 0.3rem;
+    width: 200px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #E31E24, #e67e14);
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+    transition: ease-out 0.3s;
+    z-index: 1;
+}
+
+/* Efecto clickear sobre el boton dentro del quinto contenedor del home */
+.home-fourth-content-button a button:focus {
+    box-shadow: 0 0 0 0.0625rem #000000;
+    animation: anim-shadow 0.3s forwards;
+}
+
+@keyframes anim-shadow {
+    100% {
+        box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+    }
+}
+
+/* Efecto al pasar el mouse sobre el boton dentro del cuarto contenedor del home */
+.home-fourth-content-button a button:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.home-fourth-content-button a button:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background: #E31E24;
+    background: linear-gradient(to right, #5e5e5e, #afafaf);
+    border: none;
+    border-radius: 2rem;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.home-fourth-content-button a button:hover:before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+    transition: 0.5s all ease;
+    z-index: -1;
+}
+
+/* Segundo contenedor dentro del grid area del cuaro contenedor del home */
+.home-fourth-container-two {
+    height: 28.4rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../image/01-home/04-cuarta-seccion-01.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* ==========================================================================================================> MAIN (home seccion cinco) */
+
+/* Quinto contenedor del home */
+.home-fifth {
+    display: flex;
+    justify-content: center; 
+    padding: 0 1.25rem;
+    height: 28.4rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../image/01-home/05-quinta-seccion-01.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Contenido dentro del quinto contenedor del home */
+.home-fifth-content {
+    display: flex;
+    justify-content: flex-end;
+    width: 1920px;
+}
+
+/* Contenedor del texto y el boton dentro del quinto contenedor del home*/
+.home-fifth-content-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 0 1.25rem 1.25rem;
+    text-align: right;
+}
+
+/* Tipografia del contenido dentro del quinto contenedor del home */
+.home-fifth-content-text  .text h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.2rem;
+    line-height: 4rem;
+    text-transform: uppercase;
+}
+
+/* Flecha del contenido dentro del quinto contenedor del home */
+.home-fifth-content-text .text i {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Boton dentro del quinto contenedor del home */
+.home-fifth-content-text .button a button {
+    position: relative;
+    padding: 0.3rem;
+    width: 200px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #E31E24, #e67e14);
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+    transition: ease-out 0.3s;
+    z-index: 1;
+}
+
+/* Efecto clickear sobre el boton dentro del quinto contenedor del home */
+.home-fifth-content-text .button a button:focus {
+    box-shadow: 0 0 0 0.0625rem #000000;
+    animation: anim-shadow 0.3s forwards;
+}
+
+@keyframes anim-shadow {
+    100% {
+        box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+    }
+}
+
+/* Efecto al pasar el mouse sobre el boton dentro del quinto contenedor del home */
+.home-fifth-content-text .button a button:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.home-fifth-content-text .button a button:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background: #E31E24;
+    background: linear-gradient(to right, #5e5e5e, #afafaf);
+    border: none;
+    border-radius: 2rem;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.home-fifth-content-text .button a button:hover:before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+    transition: 0.5s all ease;
+    z-index: -1;
+}
+
+/* =========================================================================================> 860px (medias query de los secciones home) */
+@media screen and (max-width: 1920px) {
+
+    /* ====================================================================================> 860px (medias query de la seccion home uno) */
+
+    /* Contenedor del slider en contenido dentro del tercer contenedor del home */
+    .home-third .home-third-content .splide {
+        cursor: grab;
+        width: 99vw;
+    }
+    
+}
+
+/* =========================================================================================> 860px (medias query de los secciones home) */
+
+@media screen and (max-width: 860px) {
+
+    /* ====================================================================================> 860px (medias query de la seccion home uno) */
+    
+    /* Tipografia del contenido dentro del primer contenedor del home */
+    .home-first-content h3 {
+        font-size: 2.16rem;
+        line-height: 2.8rem;
+    }
+
+    /* ====================================================================================> 860px (medias query de la seccion home dos) */
+    
+    /* Tipografia del contenido dentro del segundo contenedor del home */
+    .home-second-content-text .text h3 {
+        font-size: 2.16rem;
+        line-height: 2.8rem;
+    }
+       
+    /* Boton dentro del segundo contenedor del home */
+    .home-second-content-text .button a button {
+        padding: 0.24rem 0;
+        width: 160px;
+        font-size: 1.12rem;
+    }
+
+    /* ===================================================================================> 860px (medias query de la seccion home tres) */
+
+    /* Imagen dentro del contenedor de la imagen dentro de la tarjeta del slider */
+    .home-third .home-third-content .splide .splide__track .splide__list .splide__slide .card-box .image-box .card-image {
+        height: 160px;
+        width: 160px;
+    }
+    
+    /* Titulo dentro del contenedor de los textos dentro de la tarjeta del slider */
+    .home-third .home-third-content .splide .splide__track .splide__list .splide__slide .card-box .info-box .name {
+        font-size: 2.16rem;
+        line-height: 2.8rem;
+    }
+
+    /* =================================================================================> 860px (medias query de la seccion home cuatro) */
+    
+    /* Tipografia del primer contenido dentro del grid area del cuarto contenedor del home */
+    .home-fourth-content-text h3 {
+        font-size: 2.16rem;
+        line-height: 2.8rem;
+    }
+
+    /* Boton del primer contenido dentro del grid area del cuarto contenedor del home */
+    .home-fourth-content-button a button {
+        padding: 0.32rem 0 0.24rem 0;
+        width: 170px;
+        font-size: 1.12rem;
+    }
+
+    /* ==================================================================================> 860px (medias query de la seccion home cinco) */
+
+    /* Tipografia del contenido dentro del quinto contenedor del home */
+    .home-fifth-content-text .text h3 {
+        font-size: 2.16rem;
+        line-height: 2.8rem;
+    }
+
+    /* Flecha del contenido dentro del quinto contenedor del home */
+    .home-fifth-content-text .text i {
+        font-size: 1.44rem;
+    }
+
+    /* Boton dentro del quinto contenedor del home */
+    .home-fifth-content-text .button a button {
+        padding: 0.24rem 0;
+        width: 140px;
+        font-size: 1.12rem;
+    }
+
+}
+
+/* =========================================================================================> 680px (medias query de los secciones home) */
+
+@media screen and (max-width: 680px) {
+
+    /* ========================================================================================================> MAIN (home seccion uno) */
+
+    /* Contenedor del texton dentro del primer contenedor del home*/
+    .home-first-content-text {
+        margin-top: 1rem;
+    }
+
+    /* Tipografia del contenido dentro del primer contenedor del home */
+    .home-first-content-text .text h3 {
+        line-height: 2.8rem;
+    }
+
+    /* Imagen dentro del primer contenedor del home */
+        .home-first-content-image img {
+        height: 20.8rem;
+    }
+
+    /* ========================================================================================================> MAIN (home seccion dos) */
+
+    /* Imagenes 06, 07, y 08 dentro del segundo contenedor del home */
+    .home-secont-content-image-06, .home-secont-content-image-07, .home-secont-content-image-08 {
+    display: none;
+    }
+
+    /* Imagen dentro del segundo contenedor del home */
+    .home-second-content-image img {
+    height: 22rem;
+    }
+
+}
+
+/* =========================================================================================> 580px (medias query de los secciones home) */
+
+@media screen and (max-width: 580px) {
+
+    /* ===================================================================================> 580px (medias query de la seccion home tres) */
+
+    /* Imagen dentro del contenedor de la imagen dentro de la tarjeta del slider */
+    .home-third .home-third-content .splide .splide__track .splide__list .splide__slide .card-box .image-box .card-image {
+        height: 140px;
+        width: 140px;
+    }
+
+    /* Parrafo dentro del contenedor de los textos dentro de la tarjeta del slider */
+    .home-third .home-third-content .splide .splide__track .splide__list .splide__slide .card-box .info-box .description p {
+        font-size: 0.9rem;
+    }
+    
+}
+
+/* =========================================================================================> 520px (medias query de los secciones home) */
+
+@media screen and (max-width: 520px) {
+
+    /* =================================================================================> 520px (medias query de la seccion home cuatro) */
+    
+    /* Cuarto contenedor del home */
+    .home-fourth {
+        display: flex;
+        padding: 0;
+        height: 28.4rem;
+    }
+
+    /* Grid area del cuarto contenedor dentro del home */
+    .home-fourth-grid-area {
+        grid-template-columns: repeat(1, 1fr);
+        height: 100%;
+        width: 100%;
+    }
+
+    /* Primer contenedor dentro del grid area del cuarto contenedor del home */
+    .home-fourth-container-one {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../image/01-home/04-cuarta-seccion-01.jpg);
+    }
+
+    /* Tipografia del primer contenido dentro del grid area del cuarto contenedor del home */
+    .home-fourth-content-text h3 {
+        padding: 0 0 0 1.25rem;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Contenedero del boton del primer contenido dentro del grid area del cuarto contenedor del home */
+    .home-fourth-content-button {
+        padding: 0 0 0 1.25rem;
+    }
+    
+    /* Segundo contenedor dentro del grid area del cuarto contenedor del home */
+    .home-fourth-container-two {
+        display: none;
+    }
+
+}
+
+/* =========================================================================================> 480px (medias query de los secciones home) */
+
+@media screen and (max-width: 480px) {
+
+    /* ====================================================================================> 480px (medias query de la seccion home uno) */
+    
+    /* Primer contenedor del home */
+    .home-first {
+        height: 19rem;
+        margin-top: 3.75rem;
+    }
+        
+    /* Contenido dentro del primer contenedor del home */
+    .home-first-content {
+        margin-top: 0;
+    }
+    
+    /* Contenedor del texton dentro del primer contenedor del home*/
+    .home-first-content-text {
+        margin-top: 0.4rem;
+    }
+    
+    /* Tipografia del contenido dentro del primer contenedor del home */
+    .home-first-content-text .text h3 {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    /* Imagen dentro del primer contenedor del home */
+    .home-first-content-image img {
+        margin-top: 0.7rem;
+        padding: 0 0 1.5rem 1rem;
+        height: 16rem;
+    }
+    
+    /* ====================================================================================> 480px (medias query de la seccion home dos) */
+    
+    /* Segundo contenedor del home */
+    .home-second {
+        height: 19rem;
+    }
+
+    /* Imagen dentro del segundo contenedor del home */
+    .home-second-content-image img {
+        height: 12rem;
+    }
+    
+    /* Tipografia del contenido dentro del segundo contenedor del home */
+    .home-second-content-text .text h3 {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+       
+    /* Boton dentro del segundo contenedor del home */
+    .home-second-content-text .button a button {
+        padding: 0.32rem 0 0.18rem 0;
+        width: 120px;
+        font-size: 0.8rem;
+    }
+
+    /* ===================================================================================> 480px (medias query de la seccion home tres) */
+
+    /* Tercer contenedor del home */
+    .home-third {
+        height: 19rem;
+    }
+
+    /* Contenedor del slider en contenido dentro del tercer contenedor del home */
+    .home-third .home-third-content .splide {
+        padding: 1.5rem;
+    }
+    
+    /* Flechas del slider */
+    .home-third .home-third-content .splide .splide__arrows {
+        display: none;
+    }
+
+    /* Puntos dentro del slider */
+    .home-third .home-third-content .splide .splide__pagination {
+        transform: scale(0.8);
+    }
+    
+    /* Estructura de la tarjeta dentro del slider */
+    .home-third .home-third-content .splide .splide__track .splide__list .splide__slide .card-box {
+        padding-bottom: 0.4rem;
+        height: 15rem;
+    }
+
+    /* Imagen dentro del contenedor de la imagen dentro de la tarjeta del slider */
+    .home-third .home-third-content .splide .splide__track .splide__list .splide__slide .card-box .image-box .card-image {
+        height: 80px;
+        width: 80px;
+    }
+    
+    /* Titulo dentro del contenedor de los textos dentro de la tarjeta del slider */
+    .home-third .home-third-content .splide .splide__track .splide__list .splide__slide .card-box .info-box .name {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+
+    /* Parrafo dentro del contenedor de los textos dentro de la tarjeta del slider */
+    .home-third .home-third-content .splide .splide__track .splide__list .splide__slide .card-box .info-box .description p {
+        font-size: 0.6rem;
+    }
+    
+    /* =================================================================================> 480px (medias query de la seccion home cuatro) */
+    
+    /* Cuarto contenedor del home */
+    .home-fourth {
+        height: 19rem;
+    }
+
+    /* Primer contenedor dentro del grid area del cuarto contenedor del home */
+    .home-fourth-grid-area .home-fourth-container-one {
+        height: 19rem;
+    }
+    
+    /* Tipografia del primer contenido dentro del grid area del cuarto contenedor del home */
+    .home-fourth-container-one .home-fourth-content-text h3 {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    /* Boton del primer contenido dentro del grid area del cuarto contenedor del home */
+    .home-fourth-content-button a button {
+        padding: 0.32rem 0 0.18rem 0;
+        width: 130px;
+        font-size: 0.8rem;
+    }
+
+    /* Segundo contenedor dentro del grid area del cuarto contenedor del home */
+    .home-fourth-container-two {
+        height: 19rem;
+    }
+
+    /* ==================================================================================> 480px (medias query de la seccion home cinco) */
+
+    /* quinto contenedor del home */
+    .home-fifth {
+        height: 19rem;
+    }
+    
+    /* Tipografia del contenido dentro del quinto contenedor del home */
+    .home-fifth-content-text .text h3 {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    /* Flecha del contenido dentro del quinto contenedor del home */
+    .home-fifth-content-text .text i {
+        font-size: 0.8rem;
+    }
+
+    /* Boton dentro del quinto contenedor del home */
+    .home-fifth-content-text .button a button {
+        padding: 0.32rem 0 0.18rem 0;
+        width: 110px;
+        font-size: 0.8rem;
+    }
+
+}
+
+/* =========================================================================================> 383px (medias query de los secciones home) */
+
+@media screen and (max-width: 383px) {
+
+    /* ====================================================================================> 320px (medias query de la seccion home uno) */
+
+    /* Imagen dentro del primer contenedor del home */
+    .home-first-content-image img {
+        margin-top: 0.4rem;
+        padding: 0 0 1.5rem 0;
+        height: 14.3rem;
+    }
+
+}
+
+/* =========================================================================================> 320px (medias query de los secciones home) */
+
+@media screen and (max-width: 320px) {
+
+    /* ====================================================================================> 320px (medias query de la seccion home uno) */
+
+    /* Imagen dentro del primer contenedor del home */
+    .home-first-content-image img {
+        margin-top: 1.8rem;
+        padding: 0 0 1.5rem 0rem;
+        height: 12.8rem;
+    }
+
+    /* ====================================================================================> 320px (medias query de la seccion home dos) */
+
+    /* Tipografia del contenido dentro del segundo contenedor del home */
+    .home-second-content-text .text {
+        display: none;
+    }
+
+    /* ===================================================================================> 320px (medias query de la seccion home tres) */
+
+    /* Imagen dentro del contenedor de la imagen dentro de la tarjeta del slider */
+    .home-third .home-third-content .splide .splide__track .splide__list .splide__slide .card-box .image-box .card-image {
+        height: 60px;
+        width: 60px;
+    }
+        
+}
+
+/* ==========================================================================================> MAIN (Encabezado de la seccion productos) */
+
+/* Contenedor de la seccion encabezado de productos */
+.productos-section-top {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.75rem;
+    padding: 0 1.25rem;
+    height: 28.4rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../image/01-home/02-segunda-seccion-01.jpg);
+    background-size: cover;
+    background-position-y: bottom;
+    background-position-x: center;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+}
+
+/* Contenido dentro contenedor de la seccion encabezado de productos */
+.productos-section-top-content {
+    display: flex;
+    justify-content: space-between;
+    width: 1920px;
+}
+
+/* Imagen dentro contenedor de la seccion encabezado de productos */
+.productos-section-top-content-image {
+    display: flex;
+    align-items: center;
+}
+
+/* Imagen dentro contenedor de la seccion encabezado de productos */
+.productos-section-top-content-image img {
+    height: calc(29.6rem - 3.75rem);
+}
+
+/* Contenedor del texto dentro contenedor de la seccion encabezado de productos */
+.productos-section-top-content-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 0 1.25rem 1.25rem;
+    text-align: right;
+}
+
+/* Tipografia del contenido dentro contenedor de la seccion encabezado de productos */
+.productos-section-top-content-text .text h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.2rem;
+    line-height: 4rem;
+    text-transform: uppercase;
+}
+
+/* =======================================================================================> MAIN (Seccion del titulo de productos secos) */
+
+/* Contenedor de la seccion titulo de vodkas secos */
+.productos-title-dry {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    height: 24rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center;
+}
+
+/* Contenido dentro contenedor de la seccion titulo de vodkas secos */
+.productos-title-dry-content {
+    width: 1920px;
+}
+
+/* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas secos */
+.productos-title-dry-content h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #E31E24;
+    letter-spacing: 0.1rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+}
+
+/* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas secos */
+.productos-title-dry-content p {
+    margin-top: 0.6rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* ======================================================================================> MAIN (Seccion del titulo de productos dulces) */
+
+/* Contenedor de la seccion titulo de vodkas dulces */
+.productos-title-sweet {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    height: 24rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center;
+}
+
+/* Contenido dentro contenedor de la seccion titulo de vodkas dulces */
+.productos-title-sweet-content {
+    width: 1920px;
+}
+
+/* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas dulces */
+.productos-title-sweet-content h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #E31E24;
+    letter-spacing: 0.1rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+}
+
+/* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas dulces */
+.productos-title-sweet-content p {
+    margin-top: 0.6rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* ==================================================================================> MAIN (Seccion del titulo de productos mayoristas) */
+
+/* Contenedor de la seccion titulo de vodkas mayoristas */
+.productos-title-wholesaler {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    height: 24rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center;
+}
+
+/* Contenido dentro contenedor de la seccion titulo de vodkas mayoristas */
+.productos-title-wholesaler-content {
+    width: 1920px;
+}
+
+/* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas mayoristas */
+.productos-title-wholesaler-content h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #E31E24;
+    letter-spacing: 0.1rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+}
+
+/* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas mayoristas */
+.productos-title-wholesaler-content p {
+    margin-top: 0.6rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* ================================================================================================================> MAIN (producto uno) */
+
+/* Primer contenedor del primer producto (pantallas grandes) */
+.productos-one-big {
+    display: flex;
+    height: 30.3rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+
+}
+/* Contenedor del primer producto (pantallas chicas) */
+.productos-one-small {
+    display: none;
+}
+
+/* Grid area del contenedor del primer producto */
+.productos-one-big-grid-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 30.3rem;
+    width: 100vw;
+    background: #e4ba8f;
+}
+
+/* Primer contenedor dentro del grid area del contenedor del primer producto */
+.productos-one-big-container-one {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    margin: 0 0 0 auto;
+    padding: 8px 20px 20px 0;
+    height: 30.3rem;
+    max-width: 980px;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del primer producto */
+.productos-one-big-content-text h3 {
+    padding: 0.4rem 4rem 0.2rem 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del primer producto */
+.productos-one-big-content-text p {
+    padding: 0 4rem 0.2rem 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* Contenedor del boton dentro del grid area del contenedor del primer producto */
+.productos-one-big-content-button {
+    padding: 0 4rem 0 1.25rem;
+}
+
+/* Boton del primer contenido dentro del grid area del contenedor del primer producto */
+.productos-one-big-content-button a button {
+    position: relative;
+    padding: 0.3rem;
+    width: 200px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #E31E24, #e67e14);
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+    transition: ease-out 0.3s;
+    z-index: 1;
+}
+
+/* Efecto al clickear el boton del primer contenido dentro del grid area del contenedor del primer producto */
+.productos-one-big-content-button a button:focus {
+    box-shadow: 0 0 0 0.0625rem #000000;
+    animation: anim-shadow 0.3s forwards;
+}
+
+@keyframes anim-shadow {
+    100% {
+        box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+    }
+}
+
+/* Efecto al pasar el mouse sobre el boton del primer contenido dentro del grid area del contenedor del primer producto */
+.productos-one-big-content-button a button:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.productos-one-big-content-button a button:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background: #E31E24;
+    background: linear-gradient(to right, #5e5e5e, #afafaf);
+    border: none;
+    border-radius: 2rem;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.productos-one-big-content-button a button:hover:before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+    transition: 0.5s all ease;
+    z-index: -1;
+}
+
+/* Segundo contenedor del primer producto */
+.productos-one-big-container-two {
+    display: flex;
+    align-items: center;
+    height: 30.3rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../image/02-productos/01-producto-original.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Imagen dentro del segundo contenedor del primer producto */
+.productos-one-big-container-two img {
+    height: 27.8rem;
+    margin-left: -2.8rem;
+}
+
+/* ================================================================================================================> MAIN (producto dos) */
+
+/* Primer contenedor del segundo producto (pantallas grandes) */
+.productos-two-big {
+    display: flex;
+    height: 30.3rem;
+}
+
+/* Contenedor del segundo producto (pantallas chicas) */
+.productos-two-small {
+    display: none;
+}
+
+/* Grid area del contenedor del segundo producto */
+.productos-two-big-grid-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 30.3rem;
+    width: 100vw;
+    background: #f8956c;
+}
+
+/* Primer contenedor dentro del grid area del contenedor del segundo producto */
+.productos-two-big-container-one {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    margin: 0 0 0 auto;
+    padding: 0.5rem 1.25rem 1.25rem 0;
+    height: 30.3rem;
+    max-width: 980px;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del segundo producto */
+.productos-two-big-content-text h3 {
+    padding: 0.4rem 4rem 0.2rem 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del segundo producto */
+.productos-two-big-content-text p {
+    padding: 0 4rem 0 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* Contenedor del boton dentro del grid area del contenedor del segundo producto */
+.productos-two-big-content-button {
+    padding: 0 4rem 0 1.25rem;
+}
+
+/* Boton del primer contenido dentro del grid area del contenedor del segundo producto */
+.productos-two-big-content-button a button {
+    position: relative;
+    padding: 0.3rem;
+    width: 200px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #E31E24, #e67e14);
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+    transition: ease-out 0.3s;
+    z-index: 1;
+}
+
+/* Efecto al clickear el boton del primer contenido dentro del grid area del contenedor del segundo producto */
+.productos-two-big-content-button a button:focus {
+    box-shadow: 0 0 0 0.0625rem #000000;
+    animation: anim-shadow 0.3s forwards;
+}
+
+@keyframes anim-shadow {
+    100% {
+        box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+    }
+}
+
+/* Efecto al pasar el mouse sobre el boton del primer contenido dentro del grid area del contenedor del segundo producto */
+.productos-two-big-content-button a button:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.productos-two-big-content-button a button:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background: #E31E24;
+    background: linear-gradient(to right, #5e5e5e, #afafaf);
+    border: none;
+    border-radius: 2rem;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.productos-two-big-content-button a button:hover:before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+    transition: 0.5s all ease;
+    z-index: -1;
+}
+
+/* Segundo contenedor del segundo producto */
+.productos-two-big-container-two {
+    display: flex;
+    align-items: center;
+    height: 30.3rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../image/02-productos/02-producto-aji.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Imagen dentro del segundo contenedor del segundo producto */
+.productos-two-big-container-two img {
+    height: 27.8rem;
+    margin-left: -2.8rem;
+}
+
+/* ===============================================================================================================> MAIN (producto tres) */
+
+/* Primer contenedor del tercer producto (pantallas grandes) */
+.productos-three-big {
+    display: flex;
+    height: 30.3rem;
+}
+
+/* Contenedor del tercer producto (pantallas chicas) */
+.productos-three-small {
+    display: none;
+}
+
+/* Grid area del contenedor del tercer producto */
+.productos-three-big-grid-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 30.3rem;
+    width: 100vw;
+    background: #e7ab7c;
+}
+
+/* Primer contenedor dentro del grid area del contenedor del tercer producto */
+.productos-three-big-container-one {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    margin: 0 0 0 auto;
+    padding: 0.5rem 1.25rem 1.25rem 0;
+    height: 30.3rem;
+    max-width: 980px;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del tercer producto */
+.productos-three-big-content-text h3 {
+    padding: 0.4rem 4rem 0.2rem 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del tercer producto */
+.productos-three-big-content-text p {
+    padding: 0 4rem 0 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* Contenedor del boton dentro del grid area del contenedor del tercer producto */
+.productos-three-big-content-button {
+    padding: 0 4rem 0 1.25rem;
+}
+
+/* Boton del primer contenido dentro del grid area del contenedor del tercer producto */
+.productos-three-big-content-button a button {
+    position: relative;
+    padding: 0.3rem;
+    width: 200px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #E31E24, #e67e14);
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+    transition: ease-out 0.3s;
+    z-index: 1;
+}
+
+/* Efecto al clickear el boton del primer contenido dentro del grid area del contenedor del tercer producto */
+.productos-three-big-content-button a button:focus {
+    box-shadow: 0 0 0 0.0625rem #000000;
+    animation: anim-shadow 0.3s forwards;
+}
+
+@keyframes anim-shadow {
+    100% {
+        box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+    }
+}
+
+/* Efecto al pasar el mouse sobre el boton del primer contenido dentro del grid area del contenedor del tercer producto */
+.productos-three-big-content-button a button:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.productos-three-big-content-button a button:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background: #E31E24;
+    background: linear-gradient(to right, #5e5e5e, #afafaf);
+    border: none;
+    border-radius: 2rem;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.productos-three-big-content-button a button:hover:before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+    transition: 0.5s all ease;
+    z-index: -1;
+}
+
+/* Segundo contenedor del tercer producto */
+.productos-three-big-container-two {
+    display: flex;
+    align-items: center;
+    height: 30.3rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../image/02-productos/03-producto-almendras.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Imagen dentro del segundo contenedor del tercer producto */
+.productos-three-big-container-two img {
+    height: 27.8rem;
+    margin-left: -2.8rem;
+}
+
+/* =============================================================================================================> MAIN (producto cuatro) */
+
+/* Primer contenedor del cuarto producto (pantallas grandes) */
+.productos-four-big {
+    display: flex;
+    height: 30.3rem;
+}
+
+/* Contenedor del cuarto producto (pantallas chicas) */
+.productos-four-small {
+    display: none;
+}
+
+/* Grid area del contenedor del cuarto producto */
+.productos-four-big-grid-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 30.3rem;
+    width: 100vw;
+    background: #f5de88;
+}
+
+/* Primer contenedor dentro del grid area del contenedor del cuarto producto */
+.productos-four-big-container-one {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    margin: 0 0 0 auto;
+    padding: 0.5rem 1.25rem 1.25rem 0;
+    height: 30.3rem;
+    max-width: 980px;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del cuarto producto */
+.productos-four-big-content-text h3 {
+    padding: 0.4rem 4rem 0.2rem 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del cuarto producto */
+.productos-four-big-content-text p {
+    padding: 0 4rem 0 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* Contenedor del boton dentro del grid area del contenedor del cuarto producto */
+.productos-four-big-content-button {
+    padding: 0 4rem 0 1.25rem;
+}
+
+/* Boton del primer contenido dentro del grid area del contenedor del cuarto producto */
+.productos-four-big-content-button a button {
+    position: relative;
+    padding: 0.3rem;
+    width: 200px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #E31E24, #e67e14);
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+    transition: ease-out 0.3s;
+    z-index: 1;
+}
+
+/* Efecto al clickear el boton del primer contenido dentro del grid area del contenedor del cuarto producto */
+.productos-four-big-content-button a button:focus {
+    box-shadow: 0 0 0 0.0625rem #000000;
+    animation: anim-shadow 0.3s forwards;
+}
+
+@keyframes anim-shadow {
+    100% {
+        box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+    }
+}
+
+/* Efecto al pasar el mouse sobre el boton del primer contenido dentro del grid area del contenedor del cuarto producto */
+.productos-four-big-content-button a button:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.productos-four-big-content-button a button:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background: #E31E24;
+    background: linear-gradient(to right, #5e5e5e, #afafaf);
+    border: none;
+    border-radius: 2rem;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.productos-four-big-content-button a button:hover:before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+    transition: 0.5s all ease;
+    z-index: -1;
+}
+
+/* Segundo contenedor del cuarto producto */
+.productos-four-big-container-two {
+    display: flex;
+    align-items: center;
+    height: 30.3rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../image/02-productos/04-producto-naranja.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Imagen dentro del segundo contenedor del cuarto producto */
+.productos-four-big-container-two img {
+    height: 27.8rem;
+    margin-left: -2.8rem;
+}
+
+/* ==============================================================================================================> MAIN (producto cinco) */
+
+/* Primer contenedor del quinto producto (pantallas grandes) */
+.productos-five-big {
+    display: flex;
+    height: 30.3rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+}
+
+/* Contenedor del quinto producto (pantallas chicas) */
+.productos-five-small {
+    display: none;
+}
+
+/* Grid area del contenedor del quinto producto */
+.productos-five-big-grid-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 30.3rem;
+    width: 100vw;
+    background: #c6d282;
+}
+
+/* Primer contenedor dentro del grid area del contenedor del quinto producto */
+.productos-five-big-container-one {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    margin: 0 0 0 auto;
+    padding: 0.5rem 1.25rem 1.25rem 0;
+    height: 30.3rem;
+    max-width: 980px;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del quinto producto */
+.productos-five-big-content-text h3 {
+    padding: 0.4rem 4rem 0.2rem 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del quinto producto */
+.productos-five-big-content-text p {
+    padding: 0 4rem 0 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* Contenedor del boton dentro del grid area del contenedor del quinto producto */
+.productos-five-big-content-button {
+    padding: 0 4rem 0 1.25rem;
+}
+
+/* Boton del primer contenido dentro del grid area del contenedor del quinto producto */
+.productos-five-big-content-button a button {
+    position: relative;
+    padding: 0.3rem;
+    width: 200px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #E31E24, #e67e14);
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+    transition: ease-out 0.3s;
+    z-index: 1;
+}
+
+/* Efecto al clickear el boton del primer contenido dentro del grid area del contenedor del quinto producto */
+.productos-five-big-content-button a button:focus {
+    box-shadow: 0 0 0 0.0625rem #000000;
+    animation: anim-shadow 0.3s forwards;
+}
+
+@keyframes anim-shadow {
+    100% {
+        box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+    }
+}
+
+/* Efecto al pasar el mouse sobre el boton del primer contenido dentro del grid area del contenedor del quinto producto */
+.productos-five-big-content-button a button:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.productos-five-big-content-button a button:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background: #E31E24;
+    background: linear-gradient(to right, #5e5e5e, #afafaf);
+    border: none;
+    border-radius: 2rem;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.productos-five-big-content-button a button:hover:before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+    transition: 0.5s all ease;
+    z-index: -1;
+}
+
+/* Segundo contenedor del quinto producto */
+.productos-five-big-container-two {
+    display: flex;
+    align-items: center;
+    height: 30.3rem;
+    background:linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../image/02-productos/05-producto-limon.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Imagen dentro del segundo contenedor del quinto producto */
+.productos-five-big-container-two img {
+    height: 27.8rem;
+    margin-left: -2.8rem;
+}
+
+/* ==========================================================================================================> MAIN (producto uno dulce) */
+
+/* Primer contenedor del primer producto dulce (pantallas grandes) */
+.productos-one-sweet-big {
+    display: flex;
+    height: 30.3rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+}
+
+/* Contenedor del primer producto dulce (pantallas chicas) */
+.productos-one-sweet-small {
+    display: none;
+}
+
+/* Grid area del contenedor del primer producto dulce */
+.productos-one-sweet-big-grid-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 30.3rem;
+    width: 100vw;
+    background: #e7ab7c;
+}
+
+/* Primer contenedor dentro del grid area del contenedor del primer producto dulce */
+.productos-one-sweet-big-container-one {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    margin: 0 0 0 auto;
+    padding: 0.5rem 1.25rem 1.25rem 0;
+    height: 30.3rem;
+    max-width: 980px;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del primer producto dulce */
+.productos-one-sweet-big-content-text h3 {
+    padding: 0.4rem 4rem 0.2rem 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del primer producto dulce */
+.productos-one-sweet-big-content-text p {
+    padding: 0 4rem 0 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* Contenedor del boton dentro del grid area del contenedor del primer producto dulce */
+.productos-one-sweet-big-content-button {
+    padding: 0 4rem 0 1.25rem;
+}
+
+/* Boton del primer contenido dentro del grid area del contenedor del primer producto dulce */
+.productos-one-sweet-big-content-button a button {
+    position: relative;
+    padding: 0.3rem;
+    width: 200px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #E31E24, #e67e14);
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+    transition: ease-out 0.3s;
+    z-index: 1;
+}
+
+/* Efecto al clickear el boton del primer contenido dentro del grid area del contenedor del primer producto dulce */
+.productos-one-sweet-big-content-button a button:focus {
+    box-shadow: 0 0 0 0.0625rem #000000;
+    animation: anim-shadow 0.3s forwards;
+}
+
+@keyframes anim-shadow {
+    100% {
+        box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+    }
+}
+
+/* Efecto al pasar el mouse sobre el boton del primer contenido dentro del grid area del contenedor del primer producto dulce */
+.productos-one-sweet-big-content-button a button:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.productos-one-sweet-big-content-button a button:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background: #E31E24;
+    background: linear-gradient(to right, #5e5e5e, #afafaf);
+    border: none;
+    border-radius: 2rem;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.productos-one-sweet-big-content-button a button:hover:before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+    transition: 0.5s all ease;
+    z-index: -1;
+}
+
+/* Segundo contenedor del primer producto dulce */
+.productos-one-sweet-big-container-two {
+    display: flex;
+    align-items: center;
+    height: 30.3rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../image/02-productos/03-producto-almendras.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Imagen dentro del segundo contenedor del primer producto dulce */
+.productos-one-sweet-big-container-two img {
+    height: 27.8rem;
+    margin-left: -2.8rem;
+}
+
+/* ==========================================================================================================> MAIN (producto dos dulce) */
+
+/* Primer contenedor del segundo producto dulce (pantallas grandes) */
+.productos-two-sweet-big {
+    display: flex;
+    height: 30.3rem;
+}
+
+/* Contenedor del segundo producto dulce (pantallas chicas) */
+.productos-two-sweet-small {
+    display: none;
+}
+
+/* Grid area del contenedor del segundo producto dulce */
+.productos-two-sweet-big-grid-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 30.3rem;
+    width: 100vw;
+    background: #f5de88;
+}
+
+/* Primer contenedor dentro del grid area del contenedor segundo producto dulce */
+.productos-two-sweet-big-container-one {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    margin: 0 0 0 auto;
+    padding: 0.5rem 1.25rem 1.25rem 0;
+    height: 30.3rem;
+    max-width: 980px;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del segundo producto dulce */
+.productos-two-sweet-big-content-text h3 {
+    padding: 0.4rem 4rem 0.2rem 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del segundo producto dulce */
+.productos-two-sweet-big-content-text p {
+    padding: 0 4rem 0 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* Contenedor del boton dentro del grid area del contenedor del segundo producto dulce */
+.productos-two-sweet-big-content-button {
+    padding: 0 4rem 0 1.25rem;
+}
+
+/* Boton del primer contenido dentro del grid area del contenedor del segundo producto dulce */
+.productos-two-sweet-big-content-button a button {
+    position: relative;
+    padding: 0.3rem;
+    width: 200px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #E31E24, #e67e14);
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+    transition: ease-out 0.3s;
+    z-index: 1;
+}
+
+/* Efecto al clickear el boton del primer contenido dentro del grid area del contenedor del segundo producto dulce */
+.productos-two-sweet-big-content-button a button:focus {
+    box-shadow: 0 0 0 0.0625rem #000000;
+    animation: anim-shadow 0.3s forwards;
+}
+
+@keyframes anim-shadow {
+    100% {
+        box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+    }
+}
+
+/* Efecto al pasar el mouse sobre el boton del primer contenido dentro del grid area del contenedor del segundo producto dulce */
+.productos-two-sweet-big-content-button a button:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.productos-two-sweet-big-content-button a button:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background: #E31E24;
+    background: linear-gradient(to right, #5e5e5e, #afafaf);
+    border: none;
+    border-radius: 2rem;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.productos-two-sweet-big-content-button a button:hover:before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+    transition: 0.5s all ease;
+    z-index: -1;
+}
+
+/* Segundo contenedor del segundo producto dulce */
+.productos-two-sweet-big-container-two {
+    display: flex;
+    align-items: center;
+    height: 30.3rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../image/02-productos/04-producto-naranja.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Imagen dentro del segundo contenedor del segundo producto dulce */
+.productos-two-sweet-big-container-two img {
+    height: 27.8rem;
+    margin-left: -2.8rem;
+}
+
+/* =========================================================================================================> MAIN (producto tres dulce) */
+
+/* Primer contenedor del tercer producto dulce (pantallas grandes) */
+.productos-three-sweet-big {
+    display: flex;
+    height: 30.3rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+}
+
+/* Contenedor del tercer producto dulce (pantallas chicas) */
+.productos-three-sweet-small {
+    display: none;
+}
+
+/* Grid area del contenedor del tercer producto dulce */
+.productos-three-sweet-big-grid-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 30.3rem;
+    width: 100vw;
+    background: #c6d282;
+}
+
+/* Primer contenedor dentro del grid area del contenedor del tercer producto dulce */
+.productos-three-sweet-big-container-one {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    margin: 0 0 0 auto;
+    padding: 0.5rem 1.25rem 1.25rem 0;
+    height: 30.3rem;
+    max-width: 980px;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del tercer producto dulce */
+.productos-three-sweet-big-content-text h3 {
+    padding: 0.4rem 4rem 0.2rem 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del tercer producto dulce */
+.productos-three-sweet-big-content-text p {
+    padding: 0 4rem 0 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* Contenedor del boton dentro del grid area del contenedor del tercer producto dulce */
+.productos-three-sweet-big-content-button {
+    padding: 0 4rem 0 1.25rem;
+}
+
+/* Boton del primer contenido dentro del grid area del contenedor del tercer producto dulce */
+.productos-three-sweet-big-content-button a button {
+    position: relative;
+    padding: 0.3rem;
+    width: 200px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #E31E24, #e67e14);
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+    transition: ease-out 0.3s;
+    z-index: 1;
+}
+
+/* Efecto al clickear el boton del primer contenido dentro del grid area del contenedor del tercer producto dulce */
+.productos-three-sweet-big-content-button a button:focus {
+    box-shadow: 0 0 0 0.0625rem #000000;
+    animation: anim-shadow 0.3s forwards;
+}
+
+@keyframes anim-shadow {
+    100% {
+        box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+    }
+}
+
+/* Efecto al pasar el mouse sobre el boton del primer contenido dentro del grid area del contenedor del tercer producto dulce */
+.productos-three-sweet-big-content-button a button:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.productos-three-sweet-big-content-button a button:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background: #E31E24;
+    background: linear-gradient(to right, #5e5e5e, #afafaf);
+    border: none;
+    border-radius: 2rem;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.productos-three-sweet-big-content-button a button:hover:before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+    transition: 0.5s all ease;
+    z-index: -1;
+}
+
+/* Segundo contenedor del tercer producto dulce */
+.productos-three-sweet-big-container-two {
+    display: flex;
+    align-items: center;
+    height: 30.3rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../image/02-productos/05-producto-limon.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Imagen dentro del segundo contenedor del tercer producto dulceo */
+.productos-three-sweet-big-container-two img {
+    height: 27.8rem;
+    margin-left: -2.8rem;
+}
+
+/* ======================================================================================================> MAIN (producto uno mayorista) */
+
+/* Primer contenedor del primer producto mayorista (pantallas grandes) */
+.productos-one-wholesaler-big {
+    display: flex;
+    height: 30.3rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+}
+
+/* Contenedor del primer producto mayorista (pantallas chicas) */
+.productos-one-wholesaler-small {
+    display: none;
+}
+
+/* Grid area del contenedor del primer producto mayorista */
+.productos-one-wholesaler-big-grid-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 30.3rem;
+    width: 100vw;
+    background: #e4ba8f;
+}
+
+/* Primer contenedor dentro del grid area del contenedor del primer producto mayorista */
+.productos-one-wholesaler-big-container-one {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    margin: 0 0 0 auto;
+    padding: 8px 20px 20px 0;
+    height: 30.3rem;
+    max-width: 980px;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del primer producto mayorista */
+.productos-one-wholesaler-big-content-text h3 {
+    padding: 0.4rem 7rem 0.2rem 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor del primer producto mayorista */
+.productos-one-wholesaler-big-content-text p {
+    padding: 0 7rem 0.2rem 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* Contenedor del boton dentro del grid area del contenedor del primer producto mayorista */
+.productos-one-wholesaler-big-content-button {
+    padding: 0 4rem 0 1.25rem;
+}
+
+/* Boton del primer contenido dentro del grid area del contenedor del primer producto mayorista */
+.productos-one-wholesaler-big-content-button a button {
+    position: relative;
+    padding: 0.3rem;
+    width: 200px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #E31E24, #e67e14);
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+    transition: ease-out 0.3s;
+    z-index: 1;
+}
+
+/* Efecto al clickear el boton del primer contenido dentro del grid area del contenedor del primer producto mayorista */
+.productos-one-wholesaler-big-content-button a button:focus {
+    box-shadow: 0 0 0 0.0625rem #000000;
+    animation: anim-shadow 0.3s forwards;
+}
+
+@keyframes anim-shadow {
+    100% {
+        box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+    }
+}
+
+/* Efecto al pasar el mouse sobre el boton del primer contenido dentro del grid area del contenedor del primer producto mayorista */
+.productos-one-wholesaler-big-content-button a button:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.productos-one-wholesaler-big-content-button a button:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background: #E31E24;
+    background: linear-gradient(to right, #5e5e5e, #afafaf);
+    border: none;
+    border-radius: 2rem;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.productos-one-wholesaler-big-content-button a button:hover:before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+    transition: 0.5s all ease;
+    z-index: -1;
+}
+
+/* Segundo contenedor del primer producto mayorista */
+.productos-one-wholesaler-big-container-two {
+    display: flex;
+    align-items: center;
+    height: 30.3rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../image/01-home/02-segunda-seccion-01.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Imagen dentro del segundo contenedor del primer producto mayorista */
+.productos-one-wholesaler-big-container-two img {
+    height: 27.8rem;
+    margin-left: -7rem;
+}
+
+/* =======================================================================================> 860px (medias query de la seccion productos) */
+
+@media screen and (max-width: 860px) {
+
+    /* ========================================================================> 860px (medias query encabezado de la seccion productos) */
+    
+    /* Tipografia del contenido dentro del contenedor de la seccion encabezado de productos */
+    .productos-section-top-content-text .text h3 {
+        font-size: 2.16rem;
+        line-height: 2.8rem;
+    }
+
+    /* ===============================================================> 860px (medias query de la seccion del titulo de productos secos) */
+    
+    /* Contenedor de la seccion titulo de vodkas secos */
+    .productos-title-dry {
+        height: 28rem;
+    }
+
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas secos */
+    .productos-title-dry-content h3 {
+        font-size: 2.16rem;
+        line-height: 3rem;
+    }
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas secos */
+    .productos-title-dry-content p {
+        margin-top: 0.6rem;
+        color: #000000;
+    }
+    
+    /* ==============================================================> 860px (medias query de la seccion del titulo de productos dulces) */
+    
+    /* Contenedor de la seccion titulo de vodkas secos */
+    .productos-title-sweet {
+        height: 28rem;
+    }
+
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas dulces */
+    .productos-title-sweet-content h3 {
+        font-size: 2.16rem;
+        line-height: 3rem;
+    }
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas dulces */
+    .productos-title-sweet-content p {
+        margin-top: 0.6rem;
+        color: #000000;
+    }
+
+    /* ===========================================================> 860px (medias query de la seccion del titulo de productos mayotista) */
+    
+    /* Contenedor de la seccion titulo de vodkas secos */
+    .productos-title-wholesaler {
+        height: 32rem;
+    }
+
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas mayorista */
+    .productos-title-wholesaler-content h3 {
+        font-size: 2.16rem;
+        line-height: 3rem;
+    }
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas mayoristas */
+    .productos-title-wholesaler-content p {
+        margin-top: 0.6rem;
+        color: #000000;
+    }
+
+    /* ==========================================================================================> 860px (medias query del producto uno) */
+
+    /* Primer contenedor del primer producto (pantallas grandes) */
+    .productos-one-big {
+        display: none;
+    }
+
+    /* Contenedor del primer producto (pantallas chicas) */
+    .productos-one-small {
+        display: flex;
+        justify-content: center;
+        padding: 0 1.25rem;
+        height: 30.3rem;
+        background:linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url(../image/02-productos/01-producto-original.jpg);
+        background-size: cover;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+    }
+
+    /* Contenido del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content {
+        display: flex;
+        justify-content: space-between;
+        width: 1920px;
+    }
+
+    /* Imagen dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-image {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Imagen dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-image img {
+        height: 27.8rem;
+    }
+
+    /* Contenedor del texto y el boton dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem 0 1.25rem 1.25rem;
+        text-align: right;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-text .text h3 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 2.16rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        line-height: 2.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-text .text p {
+        margin-top: 0.6rem;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Boton dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-text .button a button {
+        position: relative;
+        padding: 0.24rem 0;
+        width: 160px;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.12rem;
+        font-weight: 900;
+        color: #ffffff;
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;
+        background: linear-gradient(to right, #E31E24, #e67e14);
+        border: none;
+        border-radius: 2rem;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+        transition: ease-out 0.3s;
+        z-index: 1;
+    }
+
+    /* Efecto al clikear el boton dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-text .button a button:focus {
+        box-shadow: 0 0 0 0.0625rem #000000;
+        animation: anim-shadow 0.3s forwards;
+    }
+
+    @keyframes anim-shadow {
+        100% {
+            box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+        }
+    }
+
+    /* Efecto al pasar el mouse sobre el boton dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-text .button a button:hover {
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .productos-one-small-content-text .button a button:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        left: 0;
+        background: #E31E24;
+        background: linear-gradient(to right, #5e5e5e, #afafaf);
+        border: none;
+        border-radius: 2rem;
+        opacity: 0;
+        transition: 0.5s all ease;
+    }
+
+    .productos-one-small-content-text .button a button:hover:before {
+        left: 0;
+        right: 0;
+        opacity: 1;
+        transition: 0.5s all ease;
+        z-index: -1;
+    }
+
+    /* ==========================================================================================> 860px (medias query del producto dos) */
+
+    /* Primer contenedor del segundo producto (pantallas grandes) */
+    .productos-two-big {
+        display: none;
+    }
+
+    /* Contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small {
+        display: flex;
+        justify-content: center;
+        padding: 0 1.25rem;
+        height: 30.3rem;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),  url(../image/02-productos/02-producto-aji.jpg);
+        background-size: cover;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+    }
+
+    /* Contenido del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content {
+        display: flex;
+        justify-content: space-between;
+        width: 1920px;
+    }
+
+    /* Imagen dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-image {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Imagen dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-image img {
+        height: 27.8rem;
+    }
+
+    /* Contenedor del texto y el boton dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem 0 1.25rem 1.25rem;
+        text-align: right;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-text .text h3 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 2.16rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        line-height: 2.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-text .text p {
+        margin-top: 0.6rem;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Boton dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-text .button a button {
+        position: relative;
+        padding: 0.24rem 0;
+        width: 160px;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.12rem;
+        font-weight: 900;
+        color: #ffffff;
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;
+        background: linear-gradient(to right, #E31E24, #e67e14);
+        border: none;
+        border-radius: 2rem;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+        transition: ease-out 0.3s;
+        z-index: 1;
+    }
+
+    /* Efecto al clikear el boton dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-text .button a button:focus {
+        box-shadow: 0 0 0 0.0625rem #000000;
+        animation: anim-shadow 0.3s forwards;
+    }
+
+    @keyframes anim-shadow {
+        100% {
+            box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+        }
+    }
+    
+    /* Efecto al pasar el mouse sobre el boton dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-text .button a button:hover {
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .productos-two-small-content-text .button a button:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        left: 0;
+        background: #E31E24;
+        background: linear-gradient(to right, #5e5e5e, #afafaf);
+        border: none;
+        border-radius: 2rem;
+        opacity: 0;
+        transition: 0.5s all ease;
+    }
+
+    .productos-two-small-content-text .button a button:hover:before {
+        left: 0;
+        right: 0;
+        opacity: 1;
+        transition: 0.5s all ease;
+        z-index: -1;
+    }
+
+    /* =========================================================================================> 860px (medias query del producto tres) */
+
+    /* Primer contenedor del tercer producto (pantallas grandes) */
+    .productos-three-big {
+        display: none;
+    }
+
+    /* Contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small {
+        display: flex;
+        justify-content: center;
+        padding: 0 1.25rem;
+        height: 30.3rem;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../image/02-productos/03-producto-almendras.jpg);
+        background-size: cover;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+    }
+
+    /* Contenido del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content {
+        display: flex;
+        justify-content: space-between;
+        width: 1920px;
+    }
+
+    /* Imagen dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-image {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Imagen dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-image img {
+        height: 27.8rem;
+    }
+
+    /* Contenedor del texto y el boton dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem 0 1.25rem 1.25rem;
+        text-align: right;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-text .text h3 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 2.16rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        line-height: 2.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-text .text p {
+        margin-top: 0.6rem;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Boton dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-text .button a button {
+        position: relative;
+        padding: 0.24rem 0;
+        width: 160px;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.12rem;
+        font-weight: 900;
+        color: #ffffff;
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;
+        background: linear-gradient(to right, #E31E24, #e67e14);
+        border: none;
+        border-radius: 2rem;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+        transition: ease-out 0.3s;
+        z-index: 1;
+    }
+
+    /* Efecto al clikear el boton dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-text .button a button:focus {
+        box-shadow: 0 0 0 0.0625rem #000000;
+        animation: anim-shadow 0.3s forwards;
+    }
+
+    @keyframes anim-shadow {
+        100% {
+            box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+        }
+    }
+
+    /* Efecto al pasar el mouse sobre el boton dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-text .button a button:hover {
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .productos-three-small-content-text .button a button:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        left: 0;
+        background: #E31E24;
+        background: linear-gradient(to right, #5e5e5e, #afafaf);
+        border: none;
+        border-radius: 2rem;
+        opacity: 0;
+        transition: 0.5s all ease;
+    }
+
+    .productos-three-small-content-text .button a button:hover:before {
+        left: 0;
+        right: 0;
+        opacity: 1;
+        transition: 0.5s all ease;
+        z-index: -1;
+    }
+
+    /* =======================================================================================> 860px (medias query del producto cuatro) */
+
+    /* Primer contenedor del cuarto producto (pantallas grandes) */
+    .productos-four-big {
+        display: none;
+    }
+
+    /* Contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small {
+        display: flex;
+        justify-content: center;
+        padding: 0 1.25rem;
+        height: 30.3rem;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../image/02-productos/04-producto-naranja.jpg);
+        background-size: cover;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+    }
+
+    /* Contenido del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content {
+        display: flex;
+        justify-content: space-between;
+        width: 1920px;
+    }
+
+    /* Imagen dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-image {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Imagen dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-image img {
+        height: 27.8rem;
+    }
+
+    /* Contenedor del texto y el boton dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem 0 1.25rem 1.25rem;
+        text-align: right;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-text .text h3 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 2.16rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        line-height: 2.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-text .text p {
+        margin-top: 0.6rem;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Boton dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-text .button a button {
+        position: relative;
+        padding: 0.24rem 0;
+        width: 160px;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.12rem;
+        font-weight: 900;
+        color: #ffffff;
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;
+        background: linear-gradient(to right, #E31E24, #e67e14);
+        border: none;
+        border-radius: 2rem;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+        transition: ease-out 0.3s;
+        z-index: 1;
+    }
+
+    /* Efecto al clikear el boton dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-text .button a button:focus {
+        box-shadow: 0 0 0 0.0625rem #000000;
+        animation: anim-shadow 0.3s forwards;
+    }
+
+    @keyframes anim-shadow {
+        100% {
+            box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+        }
+    }
+    
+    /* Efecto al pasar el mouse sobre el boton dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-text .button a button:hover {
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .productos-four-small-content-text .button a button:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        left: 0;
+        background: #E31E24;
+        background: linear-gradient(to right, #5e5e5e, #afafaf);
+        border: none;
+        border-radius: 2rem;
+        opacity: 0;
+        transition: 0.5s all ease;
+    }
+
+    .productos-four-small-content-text .button a button:hover:before {
+        left: 0;
+        right: 0;
+        opacity: 1;
+        transition: 0.5s all ease;
+        z-index: -1;
+    }
+
+    /* ========================================================================================> 860px (medias query del producto cinco) */
+
+    /* Primer contenedor del quinto producto (pantallas grandes) */
+    .productos-five-big {
+        display: none;
+    }
+
+    /* Contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small {
+        display: flex;
+        justify-content: center;
+        padding: 0 1.25rem;
+        height: 30.3rem;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../image/02-productos/05-producto-limon.jpg);
+        background-size: cover;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+    }
+
+    /* Contenido del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content {
+        display: flex;
+        justify-content: space-between;
+        width: 1920px;
+    }
+
+    /* Imagen dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-image {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Imagen dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-image img {
+        height: 27.8rem;
+    }
+
+    /* Contenedor del texto y el boton dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem 0 1.25rem 1.25rem;
+        text-align: right;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-text .text h3 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 2.16rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        line-height: 2.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-text .text p {
+        margin-top: 0.6rem;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Boton dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-text .button a button {
+        position: relative;
+        padding: 0.24rem 0;
+        width: 160px;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.12rem;
+        font-weight: 900;
+        color: #ffffff;
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;
+        background: linear-gradient(to right, #E31E24, #e67e14);
+        border: none;
+        border-radius: 2rem;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+        transition: ease-out 0.3s;
+        z-index: 1;
+    }
+
+    /* Efecto al clikear el boton dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-text .button a button:focus {
+        box-shadow: 0 0 0 0.0625rem #000000;
+        animation: anim-shadow 0.3s forwards;
+    }
+
+    @keyframes anim-shadow {
+        100% {
+            box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+        }
+    }
+
+    /* Efecto al pasar el mouse sobre el boton dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-text .button a button:hover {
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .productos-five-small-content-text .button a button:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        left: 0;
+        background: #E31E24;
+        background: linear-gradient(to right, #5e5e5e, #afafaf);
+        border: none;
+        border-radius: 2rem;
+        opacity: 0;
+        transition: 0.5s all ease;
+    }
+
+    .productos-five-small-content-text .button a button:hover:before {
+        left: 0;
+        right: 0;
+        opacity: 1;
+        transition: 0.5s all ease;
+        z-index: -1;
+    }
+
+    /* ====================================================================================> 860px (medias query del producto uno dulce) */
+
+    /* Primer contenedor del primer producto dulce (pantallas grandes) */
+    .productos-one-sweet-big {
+        display: none;
+    }
+
+    /* Contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small {
+        display: flex;
+        justify-content: center;
+        padding: 0 1.25rem;
+        height: 30.3rem;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../image/02-productos/03-producto-almendras.jpg);
+        background-size: cover;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+    }
+
+    /* Contenido del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content {
+        display: flex;
+        justify-content: space-between;
+        width: 1920px;
+    }
+
+    /* Imagen dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-image {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Imagen dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-image img {
+        height: 27.8rem;
+    }
+
+    /* Contenedor del texto y el boton dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem 0 1.25rem 1.25rem;
+        text-align: right;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-text .text h3 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 2.16rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        line-height: 2.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-text .text p {
+        margin-top: 0.6rem;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Boton dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-text .button a button {
+        position: relative;
+        padding: 0.24rem 0;
+        width: 160px;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.12rem;
+        font-weight: 900;
+        color: #ffffff;
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;
+        background: linear-gradient(to right, #E31E24, #e67e14);
+        border: none;
+        border-radius: 2rem;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+        transition: ease-out 0.3s;
+        z-index: 1;
+    }
+
+    /* Efecto al clikear el boton dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-text .button a button:focus {
+        box-shadow: 0 0 0 0.0625rem #000000;
+        animation: anim-shadow 0.3s forwards;
+    }
+
+    @keyframes anim-shadow {
+        100% {
+            box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+        }
+    }
+
+    /* Efecto al pasar el mouse sobre el boton dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-text .button a button:hover {
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .productos-one-sweet-small-content-text .button a button:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        left: 0;
+        background: #E31E24;
+        background: linear-gradient(to right, #5e5e5e, #afafaf);
+        border: none;
+        border-radius: 2rem;
+        opacity: 0;
+        transition: 0.5s all ease;
+    }
+
+    .productos-one-sweet-small-content-text .button a button:hover:before {
+        left: 0;
+        right: 0;
+        opacity: 1;
+        transition: 0.5s all ease;
+        z-index: -1;
+    }
+
+    /* ====================================================================================> 860px (medias query del producto dos dulce) */
+
+    /* Primer contenedor del segundo producto dulce (pantallas grandes) */
+    .productos-two-sweet-big {
+        display: none;
+    }
+
+    /* Contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small {
+        display: flex;
+        justify-content: center;
+        padding: 0 1.25rem;
+        height: 30.3rem;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../image/02-productos/04-producto-naranja.jpg);
+        background-size: cover;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+    }
+
+    /* Contenido del contenedor delsegundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content {
+        display: flex;
+        justify-content: space-between;
+        width: 1920px;
+    }
+
+    /* Imagen dentro del contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content-image {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Imagen dentro del contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content-image img {
+        height: 27.8rem;
+    }
+
+    /* Contenedor del texto y el boton dentro del contenedor del segundo producto dulceo (pantallas chicas) */
+    .productos-two-sweet-small-content-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem 0 1.25rem 1.25rem;
+        text-align: right;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content-text .text h3 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 2.16rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        line-height: 2.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content-text .text p {
+        margin-top: 0.6rem;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Boton dentro del contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content-text .button a button {
+        position: relative;
+        padding: 0.24rem 0;
+        width: 160px;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.12rem;
+        font-weight: 900;
+        color: #ffffff;
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;
+        background: linear-gradient(to right, #E31E24, #e67e14);
+        border: none;
+        border-radius: 2rem;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+        transition: ease-out 0.3s;
+        z-index: 1;
+    }
+
+    /* Efecto al clikear el boton dentro del contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content-text .button a button:focus {
+        box-shadow: 0 0 0 0.0625rem #000000;
+        animation: anim-shadow 0.3s forwards;
+    }
+
+    @keyframes anim-shadow {
+        100% {
+            box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+        }
+    }
+
+    /* Efecto al pasar el mouse sobre el boton dentro del contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content-text .button a button:hover {
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .productos-two-sweet-small-content-text .button a button:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        left: 0;
+        background: #E31E24;
+        background: linear-gradient(to right, #5e5e5e, #afafaf);
+        border: none;
+        border-radius: 2rem;
+        opacity: 0;
+        transition: 0.5s all ease;
+    }
+
+    .productos-two-sweet-small-content-text .button a button:hover:before {
+        left: 0;
+        right: 0;
+        opacity: 1;
+        transition: 0.5s all ease;
+        z-index: -1;
+    }
+
+    /* ===================================================================================> 860px (medias query del producto tres dulce) */
+
+    /* Primer contenedor del tercer producto dulce (pantallas grandes) */
+    .productos-three-sweet-big {
+        display: none;
+    }
+
+    /* Contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small {
+        display: flex;
+        justify-content: center;
+        padding: 0 1.25rem;
+        height: 30.3rem;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../image/02-productos/05-producto-limon.jpg);
+        background-size: cover;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+    }
+
+    /* Contenido del contenedor del tercer producto dulceo (pantallas chicas) */
+    .productos-three-sweet-small-content {
+        display: flex;
+        justify-content: space-between;
+        width: 1920px;
+    }
+
+    /* Imagen dentro del contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small-content-image {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Imagen dentro del contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small-content-image img {
+        height: 27.8rem;
+    }
+
+    /* Contenedor del texto y el boton dentro del contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small-content-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem 0 1.25rem 1.25rem;
+        text-align: right;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small-content-text .text h3 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 2.16rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        line-height: 2.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small-content-text .text p {
+        margin-top: 0.6rem;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Boton dentro del contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small-content-text .button a button {
+        position: relative;
+        padding: 0.24rem 0;
+        width: 160px;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.12rem;
+        font-weight: 900;
+        color: #ffffff;
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;
+        background: linear-gradient(to right, #E31E24, #e67e14);
+        border: none;
+        border-radius: 2rem;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+        transition: ease-out 0.3s;
+        z-index: 1;
+    }
+
+    /* Efecto al clikear el boton dentro del contenedor del tercer producto dulceo (pantallas chicas) */
+    .productos-three-sweet-small-content-text .button a button:focus {
+        box-shadow: 0 0 0 0.0625rem #000000;
+        animation: anim-shadow 0.3s forwards;
+    }
+
+    @keyframes anim-shadow {
+        100% {
+            box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+        }
+    }
+
+    /* Efecto al pasar el mouse sobre el boton dentro del contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small-content-text .button a button:hover {
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .productos-three-sweet-small-content-text .button a button:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        left: 0;
+        background: #E31E24;
+        background: linear-gradient(to right, #5e5e5e, #afafaf);
+        border: none;
+        border-radius: 2rem;
+        opacity: 0;
+        transition: 0.5s all ease;
+    }
+
+    .productos-three-sweet-small-content-text .button a button:hover:before {
+        left: 0;
+        right: 0;
+        opacity: 1;
+        transition: 0.5s all ease;
+        z-index: -1;
+    }
+
+    /* ================================================================================> 860px (medias query del producto uno mayorista) */
+
+    /* Primer contenedor del primer producto mayorista (pantallas grandes) */
+    .productos-one-wholesaler-big {
+        display: none;
+    }
+
+    /* Contenedor del primer producto mayoristao (pantallas chicas) */
+    .productos-one-wholesaler-small {
+        display: flex;
+        justify-content: center;
+        padding: 0 1.25rem;
+        height: 30.3rem;
+        background:linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),  url(../image/01-home/02-segunda-seccion-01.jpg);
+        background-size: cover;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+    }
+
+    /* Contenido del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content {
+        display: flex;
+        justify-content: space-between;
+        width: 1920px;
+    }
+
+    /* Imagen dentro del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-image {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Imagen dentro del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-image img {
+        height: 27.8rem;
+    }
+
+    /* Contenedor del texto y el boton dentro del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem 0 1.25rem 0.5rem;
+        text-align: right;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto mayoristao (pantallas chicas) */
+    .productos-one-wholesaler-small-content-text .text h3 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 2.16rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        line-height: 2.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-text .text p {
+        margin-top: 0.6rem;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Boton dentro del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-text .button a button {
+        position: relative;
+        padding: 0.24rem 0;
+        width: 160px;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.12rem;
+        font-weight: 900;
+        color: #ffffff;
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;
+        background: linear-gradient(to right, #E31E24, #e67e14);
+        border: none;
+        border-radius: 2rem;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.5);
+        transition: ease-out 0.3s;
+        z-index: 1;
+    }
+
+    /* Efecto al clikear el boton dentro del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-text .button a button:focus {
+        box-shadow: 0 0 0 0.0625rem #000000;
+        animation: anim-shadow 0.3s forwards;
+    }
+
+    @keyframes anim-shadow {
+        100% {
+            box-shadow: 0 0 3.125rem 1.25rem rgba(0, 0, 0, 0);
+        }
+    }
+
+    /* Efecto al pasar el mouse sobre el boton dentro del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-text .button a button:hover {
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .productos-one-wholesaler-small-content-text .button a button:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        left: 0;
+        background: #E31E24;
+        background: linear-gradient(to right, #5e5e5e, #afafaf);
+        border: none;
+        border-radius: 2rem;
+        opacity: 0;
+        transition: 0.5s all ease;
+    }
+
+    .productos-one-wholesaler-small-content-text .button a button:hover:before {
+        left: 0;
+        right: 0;
+        opacity: 1;
+        transition: 0.5s all ease;
+        z-index: -1;
+    }
+    
+}
+
+/* ==============================================================================================> 480px (medias query de los productos) */
+
+@media screen and (max-width: 480px) {
+
+    /* ===============================================================> 480px (medias query de la seccion del titulo de productos secos) */
+        
+    /* Contenedor de la seccion titulo de vodkas secos */
+    .productos-title-dry {
+        height: 18rem;
+    }
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas secos */
+    .productos-title-dry-content h3 {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+        
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas secos */
+    .productos-title-dry-content p {
+        font-size: 0.7rem;
+    }
+
+    /* ==============================================================> 480px (medias query de la seccion del titulo de productos dulces) */
+    
+    /* Contenedor de la seccion titulo de vodkas dulces */
+    .productos-title-sweet {
+        height: 18rem;
+    }
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas dulces */
+    .productos-title-sweet-content h3 {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+        
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas dulces */
+    .productos-title-sweet-content p {
+        font-size: 0.7rem;
+    }
+
+    /* ===========================================================> 480px (medias query de la seccion del titulo de productos mayorista) */
+    
+    /* Contenedor de la seccion titulo de vodkas mayorista */
+    .productos-title-wholesaler {
+        height: 20rem;
+    }
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas mayorita */
+    .productos-title-wholesaler-content h3 {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas mayorita */
+    .productos-title-wholesaler-content p {
+        font-size: 0.7rem;
+    }
+
+    /* ==========================================================================================> 480px (medias query del producto uno) */
+
+    /* Tipografia del contenido dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-text .text h3 {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-text .text p {
+        font-size: 0.8rem;
+    }
+    
+    /* ==========================================================================================> 480px (medias query del producto dos) */
+
+    /* Tipografia del contenido dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-text .text h3 {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-text .text p {
+        font-size: 0.8rem;
+    }
+    
+    /* =========================================================================================> 480px (medias query del producto tres) */
+
+    /* Tipografia del contenido dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-text .text h3 {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-text .text p {
+        font-size: 0.8rem;
+    }
+
+    /* =======================================================================================> 480px (medias query del producto cuatro) */
+
+    /* Tipografia del contenido dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-text .text h3 {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-text .text p {
+        font-size: 0.8rem;
+    }
+
+    /* ========================================================================================> 480px (medias query del producto cinco) */
+
+    /* Tipografia del contenido dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-text .text h3 {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-text .text p {
+        font-size: 0.8rem;
+    }
+
+    /*=====================================================================================> 480px (medias query del producto uno dulce) */
+
+    /* Tipografia del contenido dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-text .text h3 {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-text .text p {
+        font-size: 0.8rem;
+    }
+
+    /* ====================================================================================> 480px (medias query del producto dos dulce) */
+
+    /* Tipografia del contenido dentro del contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content-text .text h3 {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content-text .text p {
+        font-size: 0.8rem;
+    }
+
+    /* ===================================================================================> 480px (medias query del producto tres dulce) */
+
+    /* Tipografia del contenido dentro del contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small-content-text .text h3 {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small-content-text .text p {
+        font-size: 0.8rem;
+    }
+
+    /* ================================================================================> 480px (medias query del producto uno mayorista) */
+    
+    /* Tipografia del contenido dentro del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-text .text h3 {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-text .text p {
+        font-size: 0.8rem;
+    }
+    
+}
+
+/* =======================================================================================> 480px (medias query de la seccion productos) */
+
+@media screen and (max-width: 480px) {
+
+    /* =========================================================================> 480px (medias query encabezado de la seccion productos */
+    
+    /* Contenedor de la seccion encabezado de productos */
+    .productos-section-top {
+        margin-top: 3.75rem;
+        height: 19rem;
+    }
+
+    /* Contenido dentro contenedor de la seccion encabezado de productos */
+    .productos-section-top-content {
+        margin-top: 0;
+    }
+
+    /* Imagen dentro del contenedor de la seccion encabezado de productos */
+    .productos-section-top-content-image img {
+        height: 16.5rem;
+    }
+    
+    /* Tipografia del contenido dentro del contenedor de la seccion encabezado de productos */
+    .productos-section-top-content-text .text h3 {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    /* ===============================================================> 480px (medias query de la seccion del titulo de productos secos) */
+
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas secos */
+    .productos-title-dry-content h3 {
+        line-height: 1.4rem;
+    }
+
+    /* ==============================================================> 480px (medias query de la seccion del titulo de productos dulces) */
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas dulces */
+    .productos-title-sweet-content h3 {
+        line-height: 1.4rem;
+    }
+
+    /* ===========================================================> 480px (medias query de la seccion del titulo de productos mayorista) */
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas mayorita */
+    .productos-title-wholesaler-content h3 {
+        line-height: 1.4rem;
+    }
+
+    /* ==========================================================================================> 480px (medias query del producto uno) */
+
+    /* Contenedor del primer producto (pantallas chicas) */
+    .productos-one-small {
+        height: 20rem;
+    }
+
+    /* Imagen dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-image img {
+        height: 17.5rem;
+    }
+    
+    /* Tipografia del contenido dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-text .text h3 {
+        padding: 0 0 0 1.25rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-text .text p {
+        font-size: 0.7rem;
+    }
+       
+    /* Boton dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-text .button a button {
+        padding: 0.32rem 0 0.18rem 0;
+        width: 120px;
+        font-size: 0.8rem;
+    }
+
+    /* ==========================================================================================> 480px (medias query del producto dos) */
+    
+    /* Contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small {
+        height: 20rem;
+    }
+
+    /* Imagen dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-image img {
+        height: 17.5rem;
+    }
+    
+    /* Tipografia del contenido dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-text .text h3 {
+        padding: 0 0 0 1.25rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-text .text p {
+        font-size: 0.7rem;
+    }
+       
+    /* Boton dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-text .button a button {
+        padding: 0.32rem 0 0.18rem 0;
+        width: 120px;
+        font-size: 0.8rem;
+    }
+
+    /* =========================================================================================> 480px (medias query del producto tres) */
+    
+    /* Contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small {
+        height: 20rem;
+    }
+
+    /* Imagen dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-image img {
+        height: 17.5rem;
+    }
+    
+    /* Tipografia del contenido dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-text .text h3 {
+        padding: 0 0 0 1.25rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-text .text p {
+        font-size: 0.7rem;
+    }
+       
+    /* Boton dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-text .button a button {
+        padding: 0.32rem 0 0.18rem 0;
+        width: 120px;
+        font-size: 0.8rem;
+    }
+
+    /* =======================================================================================> 480px (medias query del producto cuatro) */
+
+    /* Contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small {
+        height: 20rem;
+    }
+
+    /* Imagen dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-image img {
+        height: 17.5rem;
+    }
+    
+    /* Tipografia del contenido dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-text .text h3 {
+        padding: 0 0 0 1.25rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-text .text p {
+        font-size: 0.7rem;
+    }
+       
+    /* Boton dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-text .button a button {
+        padding: 0.32rem 0 0.18rem 0;
+        width: 120px;
+        font-size: 0.8rem;
+    }
+
+    /* ========================================================================================> 480px (medias query del producto cinco) */
+
+    /* Contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small {
+        height: 20rem;
+    }
+
+    /* Imagen dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-image img {
+        height: 17.5rem;
+    }
+    
+    /* Tipografia del contenido dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-text .text h3 {
+        padding: 0 0 0 1.25rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-text .text p {
+        font-size: 0.7rem;
+    }
+       
+    /* Boton dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-text .button a button {
+        padding: 0.32rem 0 0.18rem 0;
+        width: 120px;
+        font-size: 0.8rem;
+    }
+
+    /*=====================================================================================> 480px (medias query del producto uno dulce) */
+    
+    /* Contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small {
+        height: 20rem;
+    }
+
+    /* Imagen dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-image img {
+        height: 17.5rem;
+    }
+    
+    /* Tipografia del contenido dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-text .text h3 {
+        padding: 0 0 0 1.25rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-text .text p {
+        font-size: 0.7rem;
+    }
+       
+    /* Boton dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-text .button a button {
+        padding: 0.32rem 0 0.18rem 0;
+        width: 120px;
+        font-size: 0.8rem;
+    }
+
+    /* ====================================================================================> 480px (medias query del producto dos dulce) */
+
+    /* Contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small {
+        height: 20rem;
+    }
+
+    /* Imagen dentro del contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content-image img {
+        height: 17.5rem;
+    }
+    
+    /* Tipografia del contenido dentro del contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content-text .text h3 {
+        padding: 0 0 0 1.25rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content-text .text p {
+        font-size: 0.7rem;
+    }
+       
+    /* Boton dentro del contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content-text .button a button {
+        padding: 0.32rem 0 0.18rem 0;
+        width: 120px;
+        font-size: 0.8rem;
+    }
+    
+    /* ===================================================================================> 480px (medias query del producto tres dulce) */
+
+    /* Contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small {
+        height: 20rem;
+    }
+
+    /* Imagen dentro del contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small-content-image img {
+        height: 17.5rem;
+    }
+    
+    /* Tipografia del contenido dentro del contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small-content-text .text h3 {
+        padding: 0 0 0 1.25rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small-content-text .text p {
+        font-size: 0.7rem;
+    }
+       
+    /* Boton dentro del contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small-content-text .button a button {
+        padding: 0.32rem 0 0.18rem 0;
+        width: 120px;
+        font-size: 0.8rem;
+    }
+    
+    /* ================================================================================> 480px (medias query del producto uno mayorista) */
+
+    /* Contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small {
+        height: 20rem;
+    }
+
+    /* Imagen dentro del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-image img {
+        height: 15rem;
+    }
+    
+    /* Tipografia del contenido dentro del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-text .text h3 {
+        padding: 0 0 0 1.25rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primerproducto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-text .text p {
+        padding: 0.32rem 0 0.18rem 0.5rem;
+        font-size: 0.7rem;
+    }
+       
+    /* Boton dentro del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-text .button a button {
+        padding: 0.32rem 0 0.18rem 0;
+        width: 120px;
+        font-size: 0.8rem;
+    }
+    
+}
+
+/* ==============================================================================================> 360px (medias query de los productos) */
+
+@media screen and (max-width: 360px) {
+
+    /* ===============================================================> 360px (medias query de la seccion del titulo de productos secos) */
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas secos */
+    .productos-title-dry {
+        padding-right: 1.25rem;
+    }
+        
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas secos */
+    .productos-title-dry-content h3 {
+        font-size: 0.9rem;
+    }
+        
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas secos */
+    .productos-title-dry-content p {
+        font-size: 0.6rem;
+    }
+
+    /* ==============================================================> 360px (medias query de la seccion del titulo de productos dulces) */
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas dulces */
+    .productos-title-sweet {
+        padding-right: 1.25rem;
+    }
+        
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas dulces */
+    .productos-title-sweet-content h3 {
+        font-size: 0.9rem;
+    }
+        
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas dulces */
+    .productos-title-sweet-content p {
+        font-size: 0.6rem;
+    }
+
+    /* ===========================================================> 360px (medias query de la seccion del titulo de productos mayorista) */
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas mayorista */
+    .productos-title-wholesaler {
+        padding-right: 1.25rem;
+    }
+        
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas mayorita */
+    .productos-title-wholesaler-content h3 {
+        font-size: 0.9rem;
+    }
+
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de vodkas mayorita */
+    .productos-title-wholesaler-content p {
+        font-size: 0.6rem;
+    }
+
+    /* ==========================================================================================> 360px (medias query del producto uno) */
+
+    /* Contenedor del texto y el boton dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-text {
+        padding: 1rem 0;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-text .text h3 {
+        padding: 0;
+        font-size: 0.9rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto (pantallas chicas) */
+    .productos-one-small-content-text .text p {
+        padding: 0 0 0 1rem;
+        font-size: 0.6rem;
+    }
+
+    /* ==========================================================================================> 360px (medias query del producto dos) */
+
+    /* Contenedor del texto y el boton dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-text {
+        padding: 1rem 0;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-text .text h3 {
+        font-size: 0.9rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del segundo producto (pantallas chicas) */
+    .productos-two-small-content-text .text p {
+        padding: 0 0 0 1rem;
+        font-size: 0.6rem;
+    }
+
+    /* =========================================================================================> 360px (medias query del producto tres) */
+    
+    /* Contenedor del texto y el boton dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-text {
+        padding: 1rem 0;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-text .text h3 {
+        font-size: 0.9rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del tercer producto (pantallas chicas) */
+    .productos-three-small-content-text .text p {
+        padding: 0 0 0 1rem;
+        font-size: 0.6rem;
+    }
+
+    /* =======================================================================================> 360px (medias query del producto cuatro) */
+    
+    /* Contenedor del texto y el boton dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-text {
+        padding: 1rem 0;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-text .text h3 {
+        font-size: 0.9rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del cuarto producto (pantallas chicas) */
+    .productos-four-small-content-text .text p {
+        padding: 0 0 0 1rem;
+        font-size: 0.6rem;
+    }
+
+    /* ========================================================================================> 360px (medias query del producto cinco) */
+
+    /* Contenedor del texto y el boton dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-text {
+        padding: 1rem 0;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-text .text h3 {
+        font-size: 0.9rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del quinto producto (pantallas chicas) */
+    .productos-five-small-content-text .text p {
+        padding: 0 0 0 1rem;
+        font-size: 0.6rem;
+    }
+
+    /* ====================================================================================> 360px (medias query del producto uno dulce) */
+    
+    /* Contenedor del texto y el boton dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-text {
+        padding: 1rem 0;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-text .text h3 {
+        font-size: 0.9rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto dulce (pantallas chicas) */
+    .productos-one-sweet-small-content-text .text p {
+        padding: 0 0 0 1rem;
+        font-size: 0.6rem;
+    }
+
+    /* ====================================================================================> 360px (medias query del producto dos dulce) */
+    
+    /* Contenedor del texto y el boton dentro del contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content-text {
+        padding: 1rem 0;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content-text .text h3 {
+        font-size: 0.9rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del segundo producto dulce (pantallas chicas) */
+    .productos-two-sweet-small-content-text .text p {
+        padding: 0 0 0 1rem;
+        font-size: 0.6rem;
+    }
+
+    /* ===================================================================================> 360px (medias query del producto tres dulce) */
+
+    /* Contenedor del texto y el boton dentro del contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small-content-text {
+        padding: 1rem 0;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small-content-text .text h3 {
+        font-size: 0.9rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del tercer producto dulce (pantallas chicas) */
+    .productos-three-sweet-small-content-text .text p {
+        padding: 0 0 0 1rem;
+        font-size: 0.6rem;
+    }
+
+    /* ================================================================================> 360px (medias query del producto uno mayorista) */
+
+    /* Contenedor del texto y el boton dentro del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-text {
+        padding: 1rem 0;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-text .text h3 {
+        padding: 0;
+        font-size: 0.9rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-text .text p {
+        padding: 0 0 0 1rem;
+        font-size: 0.6rem;
+    }
+
+}
+
+/* =======================================================================================> 320px (medias query de la seccion productos) */
+
+@media screen and (max-width: 320px) {
+
+    /* =========================================================================> 320px (medias query encabezado de la seccion productos */
+
+    /* Contenedor del texto dentro contenedor de la seccion encabezado de productos */
+    .productos-section-top-content-text {
+        padding: 1rem 0 1.25rem 0;
+    }
+
+    /* ================================================================================> 360px (medias query del producto uno mayorista) */
+    
+    /* Tipografia del contenido dentro del contenedor del primer producto mayorista (pantallas chicas) */
+    .productos-one-wholesaler-small-content-text .text p {
+        padding: 0 0 0 0;
+        font-size: 0.6rem;
+    }
+    
+}
+
+/* =============================================================================================================================> FOOTER */
+#footer {
+    padding: 1.25rem;
+    background: #fefefe;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+}
+
+/* Contenedor superior (logo y contactos del footer) */
+.footer-top-container {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1920px;
+}
+
+/* Contenedor del logo del footer*/
+.footer-box-logo {
+    padding: 0 0 0.625rem 0;
+}
+
+/* Logo del footer */
+.footer-box-logo img {
+    width: 11.5625rem;
+}
+
+/* Contenedor de los contactos */
+.footer-box-contacts {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0.625rem 0;
+}
+
+/* Titulo de los contactos */
+.footer-box-contacts h2 {
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Tipografias de los contactos */
+.footer-box-contacts a {
+    display: flex;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #7a7a7a;
+    letter-spacing: 0.0625rem;
+    text-transform: uppercase;
+}
+
+/* Tipografias de los contactos */
+.footer-box-contacts p {
+    display: flex;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #7a7a7a;
+    letter-spacing: 0.0625rem;
+    text-transform: uppercase;
+    cursor: default;
+}
+
+/* Efecto al pasar el mouse sobre los contactos */
+.footer-box-contacts a:hover {
+    opacity: 0.8;
+}
+
+/* Iconos de los contactos */
+.footer-box-contacts a i {
+    margin-right: 0.625rem;
+    font-size: 1.125rem;
+    color: #E31E24;
+}
+
+/* Iconos de los contactos */
+.footer-box-contacts p i {
+    margin-right: 0.625rem;
+    font-size: 1.125rem;
+    color: #E31E24;
+}
+
+/* Contenedor de las */
+.footer-box-networks {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0.625rem 0;
+}
+
+/* Titulo de las redes */
+.footer-box-networks h2 {
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Tipografias de las redes */
+.footer-box-networks a {
+    display: flex;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #7a7a7a;
+    letter-spacing: 0.0625rem;
+    text-transform: uppercase;
+}
+
+/* Efecto al pasar el mouse sobre las redes */
+.footer-box-networks a:hover {
+    opacity: 0.8;
+}
+
+/* Iconos de las redes */
+.footer-box-networks a i {
+    margin-right: 0.625rem;
+    font-size: 1.125rem;
+    color: #E31E24;
+}
+
+/* Contenedor Inferior (derechos reservados) */
+.footer-bottom-container {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1920px;
+    border-top: 0.0625rem solid #E31E24;
+    text-align: center;
+}
+
+/* Tipografia de los derechos reservados grande */
+.footer-box-copyright .copyright-big {
+    margin-top: 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #7a7a7a;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Tipografia de los derechos reservados chico */
+.copyright-small {
+    display: none;
+}
+
+/* Tipografia de la marca Gorilka en los derechos reservados */
+.footer-box-copyright p span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+/* Iconos redes sociales en el contenedor inferior */
+.footer-box-social-icons a i {
+    display: none;
+}
+
+/* =====================================================================================================> 768px (medias query del footer */
+
+@media screen and (max-width: 768px) {
+
+    /* Contenedor de las redes */
+    .footer-box-networks {
+        display: none;
+    }
+    
+    /* Contenedor de lo iconos redes sociales en el contenedor inferior */
+    .footer-box-social-icons {
+        display: flex;
+        margin: 1.25rem 0rem;
+    }
+    
+    /* Iconos redes sociales en el contenedor inferior */
+    .footer-box-social-icons a i {
+        display: flex;
+        margin-left: 0.625rem;
+        font-size: 1.125rem;
+        color: #E31E24;
+    }
+
+}
+
+/* =====================================================================================================> 540px (medias query del footer */
+
+@media screen and (max-width: 540px) {
+
+    /* Contenedor superior (logo y contactos del footer) */
+    .footer-top-container {
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        /* margin: auto; */
+    }
+    
+    /* Titulo de los contactos */
+    .footer-box-contacts h2 {
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    /* Tipografia de los derechos reservados grande */
+    .copyright-big {
+        display: none;
+    }
+
+    /* Tipografia de los derechos reservados chico */
+    .copyright-small {
+        display: flex;
+        margin: 1.25rem 0px;
+        font-size: 0.75rem;
+        font-weight: 400;
+        color: #7a7a7a;
+    }
+}
+
+/* =====================================================================================================> 350px (medias query del footer */
+
+@media screen and (max-width: 350px) {
+
+    /* Titulo de los contactos */
+    .footer-box-contacts h2 {
+        font-size: 0.75rem;
+    }
+
+    /* Tipografias de las redes */
+   .footer-box-contacts a {
+        font-size: 0.625rem;
+    }
+    
+    /* Iconos de las redes */
+    .footer-box-networks a i {
+        font-size: 1rem;
+    }
+    
+    /* Tipografia de los derechos reservados chico */
+    .copyright-small {
+        font-size: 0.75rem;
+    }
+
+    /* Tipografia de la marca Gorilka en los derechos reservados */
+    .footer-box-copyright p span {
+        font-size: 0.75rem;
+    }
+
+}
+
+
+/* ====================================================================================================================> MAIN (nosotros) */
+
+/* Contenedor de la seccion encabezado de nosotros */
+.nosotros-section-top {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.75rem;
+    padding: 0 1.25rem;
+    height: 28.4rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../image/03-nosotros/bartender-placing-line-of-shot-glasses-on-counter.jpg);
+    background-size: cover;
+    background-position-y: bottom;
+    background-position-x: center;
+    box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+}
+
+/* Contenido dentro contenedor de la seccion encabezado de nosotros */
+.nosotros-section-top-content {
+    display: flex;
+    justify-content: space-between;
+    width: 1920px;
+}
+
+/* Contenedor del texto dentro contenedor de la seccion encabezado de nosotros */
+.nosotros-section-top-content-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 0 1.25rem;
+    text-align: right;
+}
+
+/* Tipografia del contenido dentro contenedor de la seccion encabezado de nosotros */
+.nosotros-section-top-content-text .text h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.2rem;
+    line-height: 4rem;
+    text-transform: uppercase;
+}
+
+/* Contenedor de la seccion titulo de historia */
+.nosotros-title-history {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    height: 24rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center;
+}
+
+/* Contenido dentro contenedor de la seccion titulo de historia */
+.nosotros-title-history-content {
+    width: 1920px;
+}
+
+/* Tipografia del contenido dentro contenedor de la seccion titulo de historia */
+.nosotros-title-history-content h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #E31E24;
+    letter-spacing: 0.1rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+}
+
+/* Tipografia del contenido dentro contenedor de la seccion titulo de historia */
+.nosotros-title-history-content p {
+    margin-top: 0.6rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* Contenedor de la seccion titulo de por que */
+.nosotros-title-why {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    height: 24rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center;
+}
+
+/* Contenido dentro contenedor de la seccion titulo de por que */
+.nosotros-title-why-content {
+    width: 1920px;
+}
+
+/* Tipografia del contenido dentro contenedor de la seccion titulo de por que */
+.nosotros-title-why-content h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #E31E24;
+    letter-spacing: 0.1rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+}
+
+/* Tipografia del contenido dentro contenedor de la seccion titulo de por que */
+.nosotros-title-why-content p {
+    margin-top: 0.6rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* Primer contenedor de como (pantallas grandes) */
+.nosotros-two-big {
+    display: flex;
+    height: 30.3rem;
+}
+
+/* Contenedor de como (pantallas chicas) */
+.nosotros-two-small {
+    display: none;
+}
+
+/* Grid area del contenedor de como */
+.nosotros-two-big-grid-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 30.3rem;
+    width: 100vw;
+    background: #c9734e;
+}
+
+/* Primer contenedor dentro del grid area del contenedor de como */
+.nosotros-two-big-container-one {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start; 
+    margin: 0 0 0 auto;
+    padding: 0.5rem 1.25rem 1.25rem 0;
+    height: 30.3rem;
+    max-width: 980px;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor  como */
+.nosotros-two-big-content-text h3 {
+    padding: 0.4rem 4rem 0.2rem 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+}
+
+/* Tipografia del primer contenido dentro del grid area del contenedor  como */
+.nosotros-two-big-content-text p {
+    padding: 0 4rem 0 1.25rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #000000;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* Segundo contenedor  como */
+.nosotros-two-big-container-two {
+    display: flex;
+    align-items: center;
+    height: 30.3rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../image/03-nosotros/mezcal-mexican-drink-with-orange-slices-and-worm-salt-on-wooden-table.jpg);;
+    background-size: cover;
+    background-position: center;
+}
+
+/* ========================================================================================> 860px (medias query de la seccion nosotros) */
+
+@media screen and (max-width: 860px) {
+
+    /* =========================================================================> 860px (medias query encabezado de la seccion nosotros) */
+    
+    /* Tipografia del contenido dentro del contenedor de la seccion encabezado de nosotros */
+    .nosotros-section-top-content-text .text h3 {
+        font-size: 2.16rem;
+        line-height: 2.8rem;
+    }
+
+    /* ======================================================================> 860px (medias query de la seccion del titulo de nosotros) */
+    
+    /* Contenedor de la seccion titulo de historia */
+    .nosotros-title-history {
+        height: 28rem;
+    }
+
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de historia */
+    .nosotros-title-history-content h3 {
+        font-size: 2.16rem;
+        line-height: 3rem;
+    }
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de historia */
+    .nosotros-title-history-content p {
+        margin-top: 0.6rem;
+        color: #000000;
+    }
+    
+    /* ======================================================================> 860px (medias query de la seccion del titulo de nosotros) */
+    
+    /* Contenedor de la seccion titulo de por que */
+    .nosotros-title-why {
+        height: 32rem;
+    }
+
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de por wue */
+    .nosotros-title-why-content h3 {
+        font-size: 2.16rem;
+        line-height: 3rem;
+    }
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de por que */
+    .nosotros-title-why-content p {
+        margin-top: 0.6rem;
+        color: #000000;
+    }
+
+    /* ==========================================================================================> 860px (medias query del producto dos) */
+
+    /* Primer contenedor  como (pantallas grandes) */
+    .nosotros-two-big {
+        display: none;
+    }
+
+    /* Contenedor  como (pantallas chicas) */
+    .nosotros-two-small {
+        display: flex;
+        justify-content: center;
+        padding: 0 1.25rem;
+        height: 30.3rem;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../image/03-nosotros/mezcal-mexican-drink-with-orange-slices-and-worm-salt-on-wooden-table.jpg);;
+        background-size: cover;
+        box-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, .3);
+    }
+
+    /* Contenido del contenedor  como (pantallas chicas) */
+    .nosotros-two-small-content {
+        display: flex;
+        justify-content: space-between;
+        width: 1920px;
+    }
+
+    /* Contenedor del texto y el boton dentro del contenedor  como (pantallas chicas) */
+    .nosotros-two-small-content-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem 0 1.25rem 1.25rem;
+        text-align: right;
+    }
+
+    /* Tipografia del contenido dentro del contenedor  como (pantallas chicas) */
+    .nosotros-two-small-content-text .text h3 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 2.16rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        line-height: 2.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Tipografia del contenido dentro del contenedor  como (pantallas chicas) */
+    .nosotros-two-small-content-text .text p {
+        margin-top: 0.6rem;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1rem;
+        font-weight: 900;
+        color: #ffffff;
+        text-shadow: -1px 0 5px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1), 1px 0 5px rgba(0, 0, 0, 0.1), 0 -1px 5px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+    }
+}
+
+/* ==============================================================================================> 480px (medias query de los nosotros) */
+
+@media screen and (max-width: 480px) {
+
+    /* ===============================================================> 480px (medias query de la seccion del titulo de nosotros secos) */
+        
+    /* Contenedor de la seccion titulo de historia*/
+    .nosotros-title-history {
+        height: 18rem;
+    }
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de historia*/
+    .nosotros-title-history-content h3 {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+        
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de historia*/
+    .nosotros-title-history-content p {
+        font-size: 0.7rem;
+    }
+
+    /* ===========================================================> 480px (medias query de la seccion del titulo de nosotros) */
+    
+    /* Contenedor de la seccion titulo de por que */
+    .nosotros-title-why {
+        height: 20rem;
+    }
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de por que*/
+    .nosotros-title-why-content h3 {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de por que */
+    .nosotros-title-why-content p {
+        font-size: 0.7rem;
+    }
+
+    /* ==========================================================================================> 480px (medias query de nosotros two) */
+
+    /* Tipografia del contenido dentro del contenedor como (pantallas chicas) */
+    .nosotros-two-small-content-text .text h3 {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor como (pantallas chicas) */
+    .nosotros-two-small-content-text .text p {
+        font-size: 0.8rem;
+    }
+    
+}
+
+/* =======================================================================================> 480px (medias query de la seccion nosotros) */
+
+@media screen and (max-width: 480px) {
+
+    /* =========================================================================> 480px (medias query encabezado de la seccion nosotros */
+    
+    /* Contenedor de la seccion encabezado de nosotros */
+    .nosotros-section-top {
+        margin-top: 3.75rem;
+        height: 19rem;
+    }
+
+    /* Contenido dentro contenedor de la seccion encabezado de nosotros */
+    .nosotros-section-top-content {
+        margin-top: 0;
+    }
+
+    /* Tipografia del contenido dentro del contenedor de la seccion encabezado de nosotros */
+    .nosotros-section-top-content-text .text h3 {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    /* ===============================================================> 480px (medias query de la seccion del titulo de nosotros history) */
+
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de historia*/
+    .nosotros-title-history-content h3 {
+        line-height: 1.4rem;
+    }
+
+    /* ===========================================================> 480px (medias query de la seccion del titulo de nosotros que) */
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de por que*/
+    .nosotros-title-why-content h3 {
+        line-height: 1.4rem;
+    }
+
+    /* ==========================================================================================> 480px (medias query de nosotros two) */
+    
+    /* Contenedor como (pantallas chicas) */
+    .nosotros-two-small {
+        height: 20rem;
+    }
+
+    
+    /* Tipografia del contenido dentro del contenedor como (pantallas chicas) */
+    .nosotros-two-small-content-text .text h3 {
+        padding: 0 0 0 1.25rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor como (pantallas chicas) */
+    .nosotros-two-small-content-text .text p {
+        font-size: 0.7rem;
+    }
+
+}
+
+/* ==============================================================================================> 360px (medias query de los nosotros) */
+
+@media screen and (max-width: 360px) {
+
+    /* ===============================================================> 360px (medias query de la seccion del titulo de history) */
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de historia*/
+    .nosotros-title-history {
+        padding-right: 1.25rem;
+    }
+        
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de historia*/
+    .nosotros-title-history-content h3 {
+        font-size: 0.9rem;
+    }
+        
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de historia*/
+    .nosotros-title-history-content p {
+        font-size: 0.6rem;
+    }
+
+    /* ===========================================================> 360px (medias query de la seccion del titulo de nosotros) */
+    
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de por que */
+    .nosotros-title-why {
+        padding-right: 1.25rem;
+    }
+        
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de por que */
+    .nosotros-title-why-content h3 {
+        font-size: 0.9rem;
+    }
+
+    /* Tipografia del contenido dentro contenedor de la seccion titulo de por que */
+    .nosotros-title-why-content p {
+        font-size: 0.6rem;
+    }
+
+    /* ==========================================================================================> 360px (medias query de nosotros dos) */
+
+    /* Contenedor del texto y el boton dentro del contenedor como (pantallas chicas) */
+    .nosotros-two-small-content-text {
+        padding: 1rem 0;
+    }
+
+    /* Tipografia del contenido dentro del contenedor como (pantallas chicas) */
+    .nosotros-two-small-content-text .text h3 {
+        font-size: 0.9rem;
+    }
+
+    /* Tipografia del contenido dentro del contenedor como (pantallas chicas) */
+    .nosotros-two-small-content-text .text p {
+        padding: 0 0 0 1rem;
+        font-size: 0.6rem;
+    }
+
+}
+
+/* =======================================================================================> 320px (medias query de la seccion nosotros) */
+
+@media screen and (max-width: 320px) {
+
+    /* =========================================================================> 320px (medias query encabezado de la seccion nosotros */
+
+    /* Contenedor del texto dentro contenedor de la seccion encabezado de nosotros */
+    .nosotros-section-top-content-text {
+        padding: 1rem 0 1.25rem 0;
+    }
+}
+
+/* ====================================================================================================================> MAIN (contacto) */
+
+/* Contacto */
+.contactUs {
+    position: relative;
+    margin-top: 100px;
+    padding: 0 0 40px 0;
+    max-width: 1920px;
+    width: 100%;
+    align-self: center;
+}
+
+.contactUs .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+.contactUs .title h2 {
+    color: #000000;
+    font-family: 'Nunito Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.form {
+    grid-area: form;
+}
+
+.info {
+    grid-area: info;
+}
+
+.map {
+    grid-area: map;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.15);
+}
+
+.contact {
+    padding: 40px;
+    background: #ffffff;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.15);
+}
+
+.box {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 5fr 4fr;
+    grid-template-areas: 
+    "form info"
+    "form map";
+    grid-gap: 20px;
+}
+
+.contact h3 {
+    color: #E31E24;
+    text-transform: uppercase;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+/* FORMULARIO */
+.formBox {
+    position: relative;
+    width: 100%;
+}
+
+.formBox .row50 {
+    display: flex;
+    gap: 20px;
+
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 50%;
+
+}
+
+.formBox .row100 .inputBox {
+    width: 100%;
+}
+
+.inputBox span {
+    color: #E31E24;
+    font-family: 'Nunito Sans', sans-serif;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.inputBox input {
+    padding: 10px;
+    font-size: 1.1em;
+    font-family: 'Nunito Sans', sans-serif;
+    text-transform: uppercase;
+    outline: none;
+    border: 1px solid #333;
+}
+
+.inputBox textarea {
+    padding: 10px;
+    font-size: 1.1em;
+    font-family: 'Nunito Sans', sans-serif;
+    text-transform: uppercase;
+    outline: none;
+    border: 1px solid #333;
+    resize: none;
+    min-height: 425px;
+    margin-bottom: 10px;
+}
+
+.inputBox input[type="submit"] {
+    position: relative;
+    margin-bottom: -10px;
+    padding: 0.3rem;
+    width: 160px;
+    align-self: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    background: #E31E24;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.inputBox ::placeholder {
+    color: #999;
+}
+
+/* info */
+.tel {
+    margin-left: 55px;
+}
+
+.info {
+    background: #e67e14;
+}
+
+.info h3 {
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Nunito Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.info .infoBox div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info .infoBox span {
+    min-width: 40px;
+    display: flex;
+    font-family: 'Nunito Sans', sans-serif;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.info .infoBox div p {
+    color: #fff;
+    font-size: 1.1em;
+    font-family: 'Nunito Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.info .infoBox div a {
+    margin-left: 0;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-family: 'Nunito Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.icon {
+    color: #fff;
+    font-size: 2em;
+}
+
+.icon-instagram {
+    color: black;
+    font-size: 2em;
+}
+
+.icon-whatsap {
+    color: black;
+    font-size: 2em;
+}
+
+.icon-facebook{
+    color: black;
+    font-size: 2em;
+}
+
+.sci {
+    margin-top: 132px;
+    display: flex;
+}
+
+.sci li {
+    list-style: none;
+    margin-right: 15px;
+}
+
+.sci li a:hover {
+    color: #fff;   
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+@media screen and (max-width: 1940px) {
+
+    /* Contacto */
+    .contactUs {
+        padding: 0 1.25rem 40px 1.25rem;
+    }
+
+}
+
+/*  Responsive design */
+@media (max-width: 991px) {
+
+    .contactUs {
+        padding: 20px;
+    }
+
+    .box {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "form"
+            "info"
+            "map";
+    }
+
+    .map {
+        min-height: 300px;
+    }
+
+    .formBox .row50 {
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+    }
+
+    .inputBox {
+        width: 100%;
+    }
+}
+
+
+
+/*  Responsive design */
+@media screen and (max-width: 480px) {
+
+    .contactUs {
+        width: 100%;
+        padding: 0 0.25rem 20px 0.25rem;
+    }
+
+    .box {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "form"
+            "info"
+            "map";
+    }
+
+    .map {
+        width: 100%;
+        min-height: 300px;
+    }
+
+    .formBox .row50 {
+        width: 100%;
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+    }
+
+    .inputBox {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+
+    /* Titulo de los contactos */
+    .contact{
+        font-size: 0.75rem;
+        width: 100%;
+        margin: 1.25rem 0px;
+        font-weight: 400;
+        margin: 1.25rem 0px;
+        padding: 20px;
+        
+    }
+
+    .row100{
+        width: 100%;
+        margin: 1.25rem 0px;
+        font-size: 0.75rem;
+        font-weight: 400;
+        margin: 1.25rem 0px;
+    }
+
+
+
+}
+
+
+
+/* =====================================================================================================================> BOTON WHATSAPP */
+.btn-wsp{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    line-height: 63px;
+    bottom: 1rem;
+    left: 1.25rem;
+    background: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+    z-index: 100;
+    transition: all 300ms ease;
+}
+
+.btn-wsp:hover{
+    background: #20ba5a;
+}
+
+@media only screen and (min-width:320px) and (max-width:768px){
+    .btn-wtsp{
+        width:63px;
+        height:63px;
+        line-height: 66px;
+	}
+}
